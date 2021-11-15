@@ -32,11 +32,13 @@ class Player():
             health_points = randint(30, 40)
             attack = randint(10, 15)
 
+        print("****************************************")
         print(
             f"Welcome {name}!\n"
             f"You are playing as a {player_class}\n"
             f"Your HP is {health_points}\n"
             f"You have an attack of {attack}")
+        print("****************************************")
 
         return cls(name, player_class, health_points, attack)
 
