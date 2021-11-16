@@ -17,7 +17,9 @@ class Player():
 
     @classmethod
     def build_player(cls):
-
+        """
+        Builds player character
+        """
         name = input("Please enter your name: ")
         classes = ['Warrior', 'Wizard', 'Archer']
         player_class = enquiries.choose('\nPlease choose a class:\n', classes)
@@ -115,11 +117,34 @@ def start():
             print("\nPlease enter either 'y' or 'n'")
 
 
+def prompt_user():
+    input("What would you like to do?")
+
+
 def run_game():
-    print(Monster.build_monster())
+    """
+    Main function progressing through game.
+    """
+    print("Since the day you were old enough to wish to be something,"
+          " you wished to be an Adventurer."
+          " One of those brave and special souls"
+          " who stand steadfast against the dangers of the world,"
+          " and make life better for all."
+          " While also being handsomely rewarded of course."
+          " You have taken your first job, a dungeon clearance,"
+          " and at present you are standing at the entrance,"
+          " bracing yourself for what's to come."
+          " As a beginner job this should be easy, shouldn't it?\n"
+          "\nOnward Adventurer! \nTo Glory!\n"
+          "\nYou enter the dungeon\n")
+
+    prompt_user()
 
 
 def abort_game():
+    """
+    Aborts game on user prompt
+    """
     print("\nWell that's a pity :( Bye Bye")
 
 
