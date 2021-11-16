@@ -59,7 +59,10 @@ class Monster():
 
     @classmethod
     def build_monster(cls):
-
+        """
+        Creates monster instance. One of 3 random classes.
+        Sets HP and attack based on monster_class.
+        """
         monster_classes = ['Skeleton', 'Zombie', 'Goblin']
 
         monster_class = random.choice(monster_classes)
@@ -93,7 +96,7 @@ class Room():
     def __init__(self, room_class, identifier, size):
         self.room_class = room_class
         self.identifier = identifier
-        self. size = size
+        self.size = size
 
 
 def start():
@@ -118,7 +121,18 @@ def start():
 
 
 def prompt_user():
-    input("What would you like to do?")
+    """
+    Prompts user to select a command and progresses game
+    """
+    print("What would you like to do?")
+
+    player_choices = ["continue", "inspect", "attack", "interact", "flee"]
+    choice = enquiries.choose("", player_choices)
+
+    if choice == "continue":
+        print("You continue forward")
+    elif choice == "inspect":
+        print("You inspect you surroundings")
 
 
 def run_game():
