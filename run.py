@@ -1,6 +1,6 @@
-import enquiries
+import random
 
-from random import randint
+import enquiries
 
 
 class Player():
@@ -23,24 +23,63 @@ class Player():
         player_class = enquiries.choose('\nPlease choose a class:\n', classes)
 
         if player_class == 'Warrior':
-            health_points = randint(40, 50)
-            attack = randint(5, 10)
+            health_points = random.randint(40, 50)
+            attack = random.randint(5, 10)
         elif player_class == 'Wizard':
-            health_points = randint(20, 30)
-            attack = randint(15, 20)
+            health_points = random.randint(20, 30)
+            attack = random.randint(15, 20)
         else:
-            health_points = randint(30, 40)
-            attack = randint(10, 15)
+            health_points = random.randint(30, 40)
+            attack = random.randint(10, 15)
 
-        print("****************************************")
+        print("\n****************************************")
         print(
             f"Welcome {name}!\n"
-            f"You are playing as a {player_class}\n"
+            f"You are playing as the {player_class}\n"
             f"Your HP is {health_points}\n"
             f"You have an attack of {attack}")
-        print("****************************************")
+        print("****************************************\n")
+
+        run_game()
 
         return cls(name, player_class, health_points, attack)
+
+
+class Monster():
+    """
+    Main monster class. Sets monster class, hp, and attack.
+    Has method for attacking player
+    """
+    def __init__(self, monster_class, health_points, attack):
+        self.monster_class = monster_class
+        self.health_points = health_points
+        self.attack = attack
+
+    @classmethod
+    def build_monster(cls):
+
+        monster_classes = ['Skeleton', 'Zombie', 'Goblin']
+
+        monster_class = random.choice(monster_classes)
+
+        if monster_class == 'Zombie':
+            health_points = random.randint(40, 50)
+            attack = random.randint(5, 10)
+        elif monster_class == 'Skeleton':
+            health_points = random.randint(20, 30)
+            attack = random.randint(15, 20)
+        else:
+            health_points = random.randint(30, 40)
+            attack = random.randint(10, 15)
+
+        print("\n****************************************")
+        print(
+            f"Monster is {monster_class}\n"
+            f"HP is {health_points}\n"
+            f"Attack is {attack}")
+        print("****************************************\n")
+
+        return cls(monster_class, health_points, attack)
 
 
 def start():
@@ -62,6 +101,10 @@ def start():
             return False
         else:
             print("\nPlease enter either 'y' or 'n'")
+
+
+def run_game():
+    print(Monster.build_monster())
 
 
 def abort_game():
