@@ -6,8 +6,8 @@ import enquiries
 class Player():
     """
     Main player class. Sets name, player class, hp, and attack.
-    Has methods for progressing through dungeon, exploring, interacting
-    and attacking
+    Has methods for progressing through dungeon, exploring, interacting,
+    fleeing and attacking
     """
     def __init__(self, name, player_class, health_points, attack):
         self.name = name
@@ -80,6 +80,18 @@ class Monster():
         print("****************************************\n")
 
         return cls(monster_class, health_points, attack)
+
+
+class Room():
+    """
+    Main room class, builds instance of room as player progresses through game.
+    Sets room_class, ID, and size.
+    Has method describing room to player
+    """
+    def __init__(self, room_class, identifier, size):
+        self.room_class = room_class
+        self.identifier = identifier
+        self. size = size
 
 
 def start():
