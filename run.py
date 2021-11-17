@@ -42,6 +42,8 @@ class Player():
             f"You have an attack of {attack}")
         print("****************************************\n")
 
+        Room.room_id = 1
+
         run_game()
 
         return cls(name, player_class, health_points, attack)
@@ -93,9 +95,9 @@ class Room():
     Sets room_class, ID, and size.
     Has method describing room to player
     """
-    def __init__(self, room_class, identifier, size):
+    def __init__(self, room_class, room_id, size):
         self.room_class = room_class
-        self.identifier = identifier
+        self.room_id = room_id
         self.size = size
 
 
@@ -139,18 +141,20 @@ def run_game():
     """
     Main function progressing through game.
     """
-    print("Since the day you were old enough to wish to be something,"
-          " you wished to be an Adventurer."
-          " One of those brave and special souls"
-          " who stand steadfast against the dangers of the world,"
-          " and make life better for all."
-          " While also being handsomely rewarded of course."
-          " You have taken your first job, a dungeon clearance,"
-          " and at present you are standing at the entrance,"
-          " bracing yourself for what's to come."
-          " As a beginner job this should be easy, shouldn't it?\n"
-          "\nOnward Adventurer! \nTo Glory!\n"
-          "\nYou enter the dungeon\n")
+    if Room.room_id == 1:
+
+        print("Since the day you were old enough to wish to be something,"
+              " you wished to be an Adventurer."
+              " One of those brave and special souls"
+              " who stand steadfast against the dangers of the world,"
+              " and make life better for all."
+              " While also being handsomely rewarded of course."
+              " You have taken your first job, a dungeon clearance,"
+              " and at present you are standing at the entrance,"
+              " bracing yourself for what's to come."
+              " As a beginner job this should be easy, shouldn't it?\n"
+              "\nOnward Adventurer! \nTo Glory!\n"
+              "\nYou enter the dungeon\n")
 
     prompt_user()
 
@@ -163,3 +167,6 @@ def abort_game():
 
 
 start()
+"""
+ooo
+"""
