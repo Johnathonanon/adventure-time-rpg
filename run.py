@@ -145,6 +145,8 @@ def prompt_user():
             run_battle()
         elif choice == "Interact":
             player_interact()
+        else:
+            abort_game()
 
 
 def run_game():
@@ -219,7 +221,14 @@ def player_interact():
     """
     Allows player to interact with environment when possible to do so
     """
-    print("interacting")
+    if Room.room_id == 1:
+        print("There doesn't seem to be much to do in this room."
+              " It appears to be the entrance chamber of this dungeon."
+              " Maybe you should continue on?")
+        prompt_user()
+
+    elif Room.room_id == 2:
+        print("room 2")
 
 
 def abort_game():
