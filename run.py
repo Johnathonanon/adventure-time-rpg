@@ -142,12 +142,8 @@ def prompt_user():
         run_game()
     elif choice == "Inspect":
         inspect_room()
-    elif choice == "Attack" and Room.room_id == 2 or 4 or 8:
-        run_battle()
     elif choice == "Attack":
-        print("\nI know you're eager Adventurer..."
-              " but there's nothing to fight..."
-              " except perhaps your own inner demons?")
+        run_battle()
     elif choice == "Interact":
         player_interact()
     else:
@@ -237,11 +233,19 @@ def run_battle():
     player and monster.
     """
     time.sleep(1)
-    if Room.room_id == 1:
-        print("fight 1")
-        prompt_user()
-    elif Room.room_id == 2:
+    if Room.room_id == 2:
         print("fight 2")
+        prompt_user()
+    elif Room.room_id == 4:
+        print("fight 4")
+        prompt_user()
+    elif Room.room_id == 8:
+        print("boss fight")
+        prompt_user()
+    else:
+        print("\nI know you're eager Adventurer..."
+              " but there's nothing to fight..."
+              " except perhaps your own inner demons?")
         prompt_user()
 
 
