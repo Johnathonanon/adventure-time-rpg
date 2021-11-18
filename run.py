@@ -138,6 +138,7 @@ def prompt_user():
     choice = enquiries.choose("", player_choices)
 
     if choice == "Continue":
+        Room.room_id = Room.room_id + 1
         run_game()
     elif choice == "Inspect":
         inspect_room()
@@ -167,7 +168,6 @@ def run_game():
               " As a beginner job this should be easy, shouldn't it?\n"
               "\nOnward Adventurer! \nTo Glory!\n"
               "\nYou enter the dungeon\n")
-        Room.room_id = 2
         prompt_user()
 
     elif Room.room_id == 2:
