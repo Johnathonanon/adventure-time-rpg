@@ -155,7 +155,7 @@ def run_game():
     """
     Main function progressing through game.
     """
-    time.sleep(3)
+    time.sleep(2)
     if Room.room_id == 1:
         print("Since the day you were old enough to wish to be something,"
               " you wished to be an Adventurer."
