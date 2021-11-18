@@ -142,7 +142,7 @@ def prompt_user():
         run_game()
     elif choice == "Inspect":
         inspect_room()
-    elif choice == "Attack":
+    elif choice == "Attack" and Room.room_id == 2 or 4 or 8:
         run_battle()
     elif choice == "Interact":
         player_interact()
@@ -234,7 +234,7 @@ def run_battle():
     """
     time.sleep(1)
     if Room.room_id == 1:
-        print("I know you're eager Adventurer..."
+        print("\nI know you're eager Adventurer..."
               " but there's nothing to fight.")
         prompt_user()
     elif Room.room_id == 2:
