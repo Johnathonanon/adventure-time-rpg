@@ -152,7 +152,7 @@ def prompt_user():
 
 def run_game():
     """
-    Main function progressing through game.
+    Moves players through game while giving brief description
     """
     time.sleep(1)
     if Room.room_id == 1:
@@ -232,14 +232,21 @@ def run_battle():
     When user selects 'Attack' option initiates a battle between
     player and monster.
     """
-    print("Fighting")
-    prompt_user()
+    time.sleep(1)
+    if Room.room_id == 1:
+        print("I know you're eager Adventurer..."
+              " but there's nothing to fight.")
+        prompt_user()
+    elif Room.room_id == 2:
+        print("fight 2")
+        prompt_user()
 
 
 def player_interact():
     """
     Allows player to interact with environment when possible to do so
     """
+    time.sleep(1)
     if Room.room_id == 1:
         print("\nThere doesn't seem to be much to do in this room."
               " It appears to be the entrance chamber of this dungeon."
@@ -248,6 +255,7 @@ def player_interact():
 
     elif Room.room_id == 2:
         print("room 2")
+        prompt_user()
 
 
 def abort_game():
