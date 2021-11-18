@@ -143,6 +143,8 @@ def prompt_user():
             inspect_room()
         elif choice == "Attack":
             run_battle()
+        elif choice == "Interact":
+            player_interact()
 
 
 def run_game():
@@ -211,6 +213,13 @@ def run_battle():
     player and monster.
     """
     print("Fighting")
+
+
+def player_interact():
+    """
+    Allows player to interact with environment when possible to do so
+    """
+    print("interacting")
 
 
 def abort_game():
