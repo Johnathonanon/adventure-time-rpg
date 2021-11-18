@@ -156,8 +156,8 @@ def run_game():
     """
     time.sleep(1)
     if Room.room_id == 1:
-        print("Ever since the age you were old enough\n"
-              "to listen to stories and play with toys\n"
+        print("Ever since the age you were old enough to\n"
+              "listen to stories and play with toys\n"
               "you have wished to be an Adventurer.\n"
               "One of those brave and special souls\n"
               "who stand steadfast against the dangers of the world,\n"
@@ -230,15 +230,17 @@ def inspect_room():
 
 def run_battle():
     """
-    When user selects 'Attack' option initiates a battle between
+    When user selects 'Attack' option, initiates a battle between
     player and monster.
     """
+    monster1 = Monster.build_monster()
+    monster2 = Monster.build_monster()
     time.sleep(1)
     if Room.room_id == 2:
-        print("fight 2")
+        print(f"You see a {monster1}")
         prompt_user()
     elif Room.room_id == 4:
-        print("fight 4")
+        print(f"You see a {monster2}")
         prompt_user()
     elif Room.room_id == 8:
         print("boss fight")
