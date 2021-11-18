@@ -181,7 +181,19 @@ def run_game():
 
 
 def inspect_room():
-    print("inspect room")
+    print("\nYou inspect your surroundings...\n")
+
+    if Room.room_id == 1:
+        print("You find your self in a large stone room,"
+              " 3 times as wide as it is long."
+              " It's dark, but there appears to be some sort"
+              " of ethereal light coming from the stone itself"
+              " This place is old, there's a thick layer of dust"
+              " and the air is stale."
+              " There are statues lined at even intervals"
+              " around the perimeter, they look like sentinels."
+              " The only exit is directly in front of you.")
+        prompt_user()
 
 
 def abort_game():
