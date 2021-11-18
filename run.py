@@ -88,7 +88,9 @@ class Monster():
             f"Attack is {attack}")
         print("****************************************\n")
 
-        return cls(monster_class, health_points, attack)
+        monster = cls(monster_class, health_points, attack)
+
+        return monster
 
 
 class Room():
