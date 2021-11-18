@@ -130,7 +130,7 @@ def prompt_user():
     """
     Prompts user to select a command and progresses game
     """
-    print("What would you like to do?")
+    print("\nWhat would you like to do?")
 
     player_choices = ["Continue", "Inspect", "Attack", "Interact", "Flee"]
     choice = enquiries.choose("", player_choices)
@@ -197,7 +197,7 @@ def inspect_room():
     print("\nYou inspect your surroundings...\n")
 
     if Room.room_id == 1:
-        print("You find your self in a large stone room,"
+        print("\nYou find your self in a large stone room,"
               " 3 times as wide as it is long."
               " It's dark, but there appears to be some sort"
               " of ethereal light coming from the stone itself."
@@ -205,7 +205,7 @@ def inspect_room():
               " and the air is stale."
               " There are statues lined at even intervals"
               " around the perimeter, they look like sentinels."
-              " The only exit is directly in front of you.")
+              " The only exit is directly in front of you.\n")
         prompt_user()
 
 
@@ -222,9 +222,9 @@ def player_interact():
     Allows player to interact with environment when possible to do so
     """
     if Room.room_id == 1:
-        print("There doesn't seem to be much to do in this room."
+        print("\nThere doesn't seem to be much to do in this room."
               " It appears to be the entrance chamber of this dungeon."
-              " Maybe you should continue on?")
+              " Maybe you should continue on?\n")
         prompt_user()
 
     elif Room.room_id == 2:
