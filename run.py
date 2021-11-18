@@ -199,6 +199,7 @@ def inspect_room():
     """
     print("\nYou inspect your surroundings...\n")
 
+    time.sleep(1)
     if Room.room_id == 1:
         print("\nYou find your self in a large stone room,"
               " 3 times as wide as it is long."
@@ -210,6 +211,18 @@ def inspect_room():
               " around the perimeter, they look like sentinels."
               " The only exit is directly in front of you.\n")
         prompt_user()
+    elif Room.room_id == 2:
+        print("\nYou are in a room roughly half the size of the entrance hall."
+              " This room is the most brightly lit area so far."
+              " It's made from the same stone as everywhere else,"
+              " except for what looks like narrow veins of pulsing"
+              " light flowing from the walls to the center of the room."
+              " In the center stands a very unhappy looking monster"
+              " There are two exits from the room, one straight ahead"
+              " and one to the right. The one straight ahead has an"
+              " extremely ominous air coming from it. The right less so."
+              " It seems apparent you won't be going anywhere with"
+              " the monster blocking your way.")
 
 
 def run_battle():
