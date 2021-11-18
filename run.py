@@ -46,7 +46,9 @@ class Player():
 
         run_game()
 
-        return cls(name, player_class, health_points, attack)
+        player = cls(name, player_class, health_points, attack)
+
+        return player
 
 
 class Monster():
@@ -133,22 +135,10 @@ def prompt_user():
 
     if Room.room_id == 1:
         if choice == "Continue":
-            print("You continue forward through the only visible doorway,"
-                  " and find yourself in a long stone corridor."
-                  " The corridor gives off a dull ambient light,"
-                  " evidently magical in nature,"
-                  " which is just barely enough to see by."
-                  " It's obviously very old, with years of accumulated dust,"
-                  " and cobwebs hanging from ceilings and corners."
-                  " You come to a left turn in the passage and continue on,"
-                  " as it's the only way to go."
-                  " Ahead you can see a doorway into a room"
-                  " far brighter than the hallway you're presently in."
-                  " There seems to be the shadow of ...."
-                  " something moving around in there."
-                  " A frisson of nerves runs through you"
-                  " but you steel yourself and move forward."
-                  " You enter the room")
+            Room.room_id = 2
+            run_game()
+        elif choice == "Inspect":
+            inspect_room()
 
 
 def run_game():
@@ -168,8 +158,30 @@ def run_game():
               " As a beginner job this should be easy, shouldn't it?\n"
               "\nOnward Adventurer! \nTo Glory!\n"
               "\nYou enter the dungeon\n")
+        prompt_user()
 
-    prompt_user()
+    elif Room.room_id == 2:
+        print("\nYou continue forward through the only visible doorway,"
+              " and find yourself in a long stone corridor."
+              " The corridor gives off a dull ambient light,"
+              " evidently magical in nature,"
+              " which is just barely enough to see by."
+              " It's obviously very old, with years of accumulated dust,"
+              " and cobwebs hanging from ceilings and corners."
+              " You come to a left turn in the passage and continue on,"
+              " as it's the only way to go."
+              " Ahead you can see a doorway into a room"
+              " far brighter than the hallway you're presently in."
+              " There seems to be the shadow of ...."
+              " something moving around in there."
+              " A frisson of nerves runs through you"
+              " but you steel yourself and move forward.\n"
+              "\nYou enter the room\n")
+        prompt_user()
+
+
+def inspect_room():
+    print("inspect room")
 
 
 def abort_game():
