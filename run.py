@@ -139,6 +139,8 @@ def prompt_user():
             run_game()
         elif choice == "Inspect":
             inspect_room()
+        elif choice == "Attack":
+            run_battle()
 
 
 def run_game():
@@ -163,7 +165,7 @@ def run_game():
     elif Room.room_id == 2:
         print("\nYou continue forward through the only visible doorway,"
               " and find yourself in a long stone corridor."
-              " The corridor gives off a dull ambient light,"
+              " The corridor also gives off a dull ambient light,"
               " evidently magical in nature,"
               " which is just barely enough to see by."
               " It's obviously very old, with years of accumulated dust,"
@@ -181,19 +183,32 @@ def run_game():
 
 
 def inspect_room():
+    """
+    When user selects 'Inspect' prints a brief description
+    of the current room, then prompts the player once more.
+    Description is different for each room depending on unique ID
+    """
     print("\nYou inspect your surroundings...\n")
 
     if Room.room_id == 1:
         print("You find your self in a large stone room,"
               " 3 times as wide as it is long."
               " It's dark, but there appears to be some sort"
-              " of ethereal light coming from the stone itself"
+              " of ethereal light coming from the stone itself."
               " This place is old, there's a thick layer of dust"
               " and the air is stale."
               " There are statues lined at even intervals"
               " around the perimeter, they look like sentinels."
               " The only exit is directly in front of you.")
         prompt_user()
+
+
+def run_battle():
+    """
+    When user selects 'Attack' option initiates a battle between
+    player and monster.
+    """
+    print("Fighting")
 
 
 def abort_game():
