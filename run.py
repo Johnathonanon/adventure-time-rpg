@@ -156,15 +156,15 @@ def run_game():
     """
     time.sleep(1)
     if Room.room_id == 1:
-        print("Since the day you were old enough to wish to be something,"
+        print("Since the day you were old enough\n to wish to be something,\n"
               " you wished to be an Adventurer."
-              " One of those brave and special souls"
-              " who stand steadfast against the dangers of the world,"
-              " and make life better for all."
-              " While also being handsomely rewarded of course."
-              " You have taken your first job, a dungeon clearance,"
-              " and at present you are standing at the entrance,"
-              " bracing yourself for what's to come."
+              " One of those brave and special souls\n"
+              " who stand steadfast against the dangers of the world,\n"
+              " and make life better for all.\n"
+              " While also being handsomely rewarded of course.\n"
+              " You have taken your first job, a dungeon clearance,\n"
+              " and at present you are standing at the entrance,\n"
+              " bracing yourself for what's to come.\n"
               " As a beginner job this should be easy, shouldn't it?\n"
               "\nOnward Adventurer! \nTo Glory!\n"
               "\nYou enter the dungeon\n")
