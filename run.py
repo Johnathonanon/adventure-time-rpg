@@ -227,7 +227,9 @@ def run_battle():
     time.sleep(1)
     if Room.room_id == 2:
         monster1 = Monster.build_monster()
-        print(f"You see a {monster1.monster_class}")
+        print(f"You attack the {monster1.monster_class}")
+        print(f"The {monster1.monster_class} is hurt")
+        print(f"The {monster1.monster_class} is dead")
         prompt_user()
     elif Room.room_id == 4:
         monster2 = Monster.build_monster()
