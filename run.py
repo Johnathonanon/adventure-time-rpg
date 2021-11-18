@@ -223,6 +223,7 @@ def inspect_room():
               " extremely ominous air coming from it. The right less so."
               " It seems apparent you won't be going anywhere with"
               " the monster blocking your way.")
+        prompt_user()
 
 
 def run_battle():
