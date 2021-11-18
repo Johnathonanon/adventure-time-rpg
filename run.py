@@ -83,16 +83,7 @@ class Monster():
             health_points = random.randint(30, 40)
             attack = random.randint(10, 15)
 
-        print("\n****************************************")
-        print(
-            f"Monster is {monster_class}\n"
-            f"HP is {health_points}\n"
-            f"Attack is {attack}")
-        print("****************************************\n")
-
-        monster = cls(monster_class, health_points, attack)
-
-        return monster
+        return cls(monster_class, health_points, attack)
 
 
 class Room():
@@ -233,13 +224,13 @@ def run_battle():
     When user selects 'Attack' option, initiates a battle between
     player and monster.
     """
-    monster1 = Monster.build_monster()
-    monster2 = Monster.build_monster()
     time.sleep(1)
     if Room.room_id == 2:
-        print(f"You see a {monster1}")
+        monster1 = Monster.build_monster()
+        print(f"You see a {monster1.monster_class}")
         prompt_user()
     elif Room.room_id == 4:
+        monster2 = Monster.build_monster()
         print(f"You see a {monster2}")
         prompt_user()
     elif Room.room_id == 8:
