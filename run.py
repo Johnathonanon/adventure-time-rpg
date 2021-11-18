@@ -137,18 +137,16 @@ def prompt_user():
     player_choices = ["Continue", "Inspect", "Attack", "Interact", "Flee"]
     choice = enquiries.choose("", player_choices)
 
-    if Room.room_id == 1:
-        if choice == "Continue":
-            Room.room_id = 2
-            run_game()
-        elif choice == "Inspect":
-            inspect_room()
-        elif choice == "Attack":
-            run_battle()
-        elif choice == "Interact":
-            player_interact()
-        else:
-            abort_game()
+    if choice == "Continue":
+        run_game()
+    elif choice == "Inspect":
+        inspect_room()
+    elif choice == "Attack":
+        run_battle()
+    elif choice == "Interact":
+        player_interact()
+    else:
+        abort_game()
 
 
 def run_game():
@@ -169,6 +167,7 @@ def run_game():
               " As a beginner job this should be easy, shouldn't it?\n"
               "\nOnward Adventurer! \nTo Glory!\n"
               "\nYou enter the dungeon\n")
+        Room.room_id = 2
         prompt_user()
 
     elif Room.room_id == 2:
@@ -224,6 +223,8 @@ def inspect_room():
               " It seems apparent you won't be going anywhere with"
               " the monster blocking your way.")
         prompt_user()
+    else:
+        print("You're")
 
 
 def run_battle():
