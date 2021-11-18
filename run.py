@@ -128,13 +128,27 @@ def prompt_user():
     """
     print("What would you like to do?")
 
-    player_choices = ["continue", "inspect", "attack", "interact", "flee"]
+    player_choices = ["Continue", "Inspect", "Attack", "Interact", "Flee"]
     choice = enquiries.choose("", player_choices)
 
-    if choice == "continue":
-        print("You continue forward")
-    elif choice == "inspect":
-        print("You inspect you surroundings")
+    if Room.room_id == 1:
+        if choice == "Continue":
+            print("You continue forward through the only visible doorway,"
+                  " and find yourself in a long stone corridor."
+                  " The corridor gives off a dull ambient light,"
+                  " evidently magical in nature,"
+                  " which is just barely enough to see by."
+                  " It's obviously very old, with years of accumulated dust,"
+                  " and cobwebs hanging from ceilings and corners."
+                  " You come to a left turn in the passage and continue on,"
+                  " as it's the only way to go."
+                  " Ahead you can see a doorway into a room"
+                  " far brighter than the hallway you're presently in."
+                  " There seems to be the shadow of ...."
+                  " something moving around in there."
+                  " A frisson of nerves runs through you"
+                  " but you steel yourself and move forward."
+                  " You enter the room")
 
 
 def run_game():
@@ -142,7 +156,6 @@ def run_game():
     Main function progressing through game.
     """
     if Room.room_id == 1:
-
         print("Since the day you were old enough to wish to be something,"
               " you wished to be an Adventurer."
               " One of those brave and special souls"
@@ -167,6 +180,3 @@ def abort_game():
 
 
 start()
-"""
-ooo
-"""
