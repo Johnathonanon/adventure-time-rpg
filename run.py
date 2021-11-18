@@ -233,6 +233,7 @@ def run_battle():
     player and monster.
     """
     print("Fighting")
+    prompt_user()
 
 
 def player_interact():
