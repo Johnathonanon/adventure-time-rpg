@@ -257,12 +257,12 @@ def inspect_room():
         print("\nYou find yourself at one end of a long narrow room.\n"
               "It perfectly resembles the previous room,\n"
               "except for the different dimenions.\n"
-              "Directly in front of you,\n roughly a quarter"
-              " the way down the long room,\n stands a monster.\n"
-              "And roughy halfway,\n in front of the first"
-              " visible exit,\n stands another.\n"
+              "Directly in front of you,\nroughly a quarter"
+              " the way down the long room,\nstands a monster.\n"
+              "And roughy halfway,\nin front of the first"
+              " visible exit,\nstands another.\n"
               "The second exit from the room is"
-              " at the very end,\n in the right corner.\n"
+              " at the very end,\nin the right corner.\n"
               "Once again, the veins of light are present,\n"
               "flowing towards the two enemies.\n"
               "And once again neither looks particularly happy\n")
@@ -286,7 +286,7 @@ def run_battle():
     elif Room.room_id == 4:
         monster2 = Monster.build_monster()
         monster3 = Monster.build_monster()
-        print(f"You are attacked by {monster2.monster_class}"
+        print(f"\nYou are attacked by {monster2.monster_class}"
               f" and {monster3.monster_class}")
         prompt_user()
     elif Room.room_id == 8:
