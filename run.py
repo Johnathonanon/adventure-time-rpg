@@ -213,12 +213,12 @@ def run_game():
             Room.room_id = 4
             prompt_user()
         else:
-            print("\nForward or left.\n"
+            print("\nForward or right.\n"
                   "That's it.\n"
                   "Two choices.\n"
-                  "Forward or left")
+                  "Forward or right.")
             run_game()
-    elif Room.room_id == 5:
+    elif Room.room_id == 4:
         print("\nThere are two exits from this room.\n"
               "One to your left, halfway down the room,\n"
               "and one on you right, at the very end.")
