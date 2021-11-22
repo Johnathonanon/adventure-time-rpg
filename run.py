@@ -218,7 +218,7 @@ def run_game():
                   "Two choices.\n"
                   "Forward or left")
             run_game()
-    elif Room.room_id == 4:
+    elif Room.room_id == 5:
         print("\nThere are two exits from this room.\n"
               "One to your left, halfway down the room,\n"
               "and one on you right, at the very end.")
