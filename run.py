@@ -228,7 +228,7 @@ def run_game():
             run_game()
         elif door_choice == "right":
             print("right")
-            run_game()
+            prompt_user()
 
 
 def inspect_room():
