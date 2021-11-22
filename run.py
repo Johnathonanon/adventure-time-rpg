@@ -162,53 +162,53 @@ def run_game():
               "\nYou enter the dungeon\n")
         prompt_user()
     elif Room.room_id == 2:
-        print("\nYou continue forward through the only visible doorway,"
-              " and find yourself in a long stone corridor."
-              " The corridor also gives off a dull ambient light,"
-              " evidently magical in nature,"
-              " which is just barely enough to see by."
-              " It's obviously very old, with years of accumulated dust,"
-              " and cobwebs hanging from ceilings and corners."
-              " You come to a left turn in the passage and continue on,"
-              " as it's the only way to go."
-              " Ahead you can see a doorway into a room"
-              " far brighter than the hallway you're presently in."
-              " There seems to be the shadow of ...."
-              " something moving around in there."
-              " A frisson of nerves runs through you"
+        print("\nYou continue forward through the only visible doorway,\n"
+              " and find yourself in a long stone corridor.\n"
+              " The corridor also gives off a dull ambient light,\n"
+              " evidently magical in nature,\n"
+              " which is just barely enough to see by.\n"
+              " It's obviously very old, with years of accumulated dust,\n"
+              " and cobwebs hanging from ceilings and corners.\n"
+              " You come to a left turn in the passage and continue on,\n"
+              " as it's the only way to go.\n"
+              " Ahead you can see a doorway into a room\n"
+              " far brighter than the hallway you're presently in.\n"
+              " There seems to be the shadow of ...\n"
+              " something...\n moving around in there.\n"
+              " A frisson of nerves runs through you\n"
               " but you steel yourself and move forward.\n"
               "\nYou enter the room\n")
         prompt_user()
     elif Room.room_id == 3:
-        print("\nThere are two doorways exiting this room."
-              " One directly in front of you behind the slain monster,"
+        print("\nThere are two doorways exiting this room.\n"
+              " One directly in front of you behind the slain monster,\n"
               " and one to your right.\n")
-        door_choice = input("Which way will you go? forward/right :").lower()
+        door_choice = input("\nWhich way will you go? forward/right :").lower()
         if door_choice == "forward":
-            print("\nYou proceed through the door directly in front of you."
-                  " The hallway you find yourself in is the darkest yet."
-                  " There seems to be an ominous feeling in the air,"
-                  " and a somewhat tangy smell assualts your nose"
-                  " The doorway to the room ahead appears before you,"
-                  " and you continue on into the unknown."
-                  " As soon as you step foot over the threshold,"
-                  " a door slams shut behind you,"
-                  " sealing you from the corridor behind."
-                  " A hissing noise accompanies the appearance of"
-                  " a thick luminescent green fog,"
-                  " rapidly rising from every surface."
-                  " Your last thought as the world goes black"
-                  " is how poor your luck must be,"
-                  " but perhaps in another life you will succeed.")
+            print("\nYou proceed through the door directly in front of you.\n"
+                  " The hallway you find yourself in is the darkest yet.\n"
+                  " There seems to be an ominous feeling in the air,\n"
+                  " and a somewhat tangy smell assualts your nose.\n"
+                  " The doorway to the room ahead appears before you,\n"
+                  " and you continue on into the unknown.\n"
+                  " As soon as you step foot over the threshold,\n"
+                  " a door slams shut behind you,\n"
+                  " sealing you from the corridor behind.\n"
+                  " A hissing noise accompanies the appearance\n of"
+                  " a thick luminescent green fog,\n"
+                  " rapidly rising from every surface.\n"
+                  " Your last thought as the world goes black\n"
+                  " is how poor your luck must be,\n"
+                  " but perhaps in another life you will succeed.\n")
             abort_game()
         elif door_choice == "right":
-            print("\nYou proceed through the door to the right."
-                  " You enter a long straight corridor,"
-                  " at the end of which you can see"
-                  " light pouring from what is evidently the next room."
-                  " You continue forward cautiously,"
-                  " and once again you can see something moving"
-                  " ahead as you get closer to the doorway."
+            print("\nYou proceed through the door to the right.\n"
+                  " You enter a long straight corridor,\n"
+                  " at the end of which you can see\n"
+                  " light pouring from what is evidently the next room.\n"
+                  " You continue forward cautiously,\n"
+                  " and once again you can see something moving\n"
+                  " ahead as you get closer to the doorway.\n"
                   " You enter the next room")
             Room.room_id = 4
             prompt_user()
@@ -224,42 +224,42 @@ def inspect_room():
 
     time.sleep(1)
     if Room.room_id == 1:
-        print("\nYou find your self in a large stone room,"
-              " 3 times as wide as it is long."
-              " It's dark, but there appears to be some sort"
-              " of ethereal light coming from the stone itself."
-              " This place is old, there's a thick layer of dust"
-              " and the air is stale."
-              " There are statues lined at even intervals"
-              " around the perimeter, they look like sentinels."
+        print("\nYou find your self in a large stone room,\n"
+              " 3 times as wide as it is long.\n"
+              " It's dark, but there appears to be some sort\n"
+              " of ethereal light coming from the stone itself.\n"
+              " This place is old,\n there's a thick layer of dust\n"
+              " and the air is stale.\n"
+              " There are statues lined at even intervals,\n"
+              " standing like sentinels around the perimter.\n"
               " The only exit is directly in front of you.\n")
         prompt_user()
     elif Room.room_id == 2:
-        print("\nYou are in a room roughly half the size of the entrance hall."
-              " This room is the most brightly lit area so far."
-              " It's made from the same stone as everywhere else,"
+        print("\nYou are in a room roughly half the size of the first.\n"
+              " This room is the most brightly lit area so far.\n"
+              " It's made from the same stone as everywhere else,\n"
               " except for what looks like narrow veins of pulsing"
-              " light flowing from the walls to the center of the room."
-              " In the center stands a very unhappy looking monster"
-              " There are two exits from the room, one straight ahead"
-              " and one to the right. The one straight ahead has an"
-              " extremely ominous air coming from it. The right less so."
-              " It seems apparent you won't be going anywhere with"
-              " the monster blocking your way.")
+              " light\n flowing from the walls to the center of the room.\n"
+              " In the center stands a very unhappy looking monster.\n"
+              " There are two exits from the room,\n one straight ahead\n"
+              " and one to the right.\n The one straight ahead has an\n"
+              " extremely ominous air coming from it. The right less so.\n"
+              " It seems apparent you won't be going anywhere\n with"
+              " the monster blocking your way.\n")
         prompt_user()
     elif Room.room_id == 4:
-        print("\nYou find yourself at one end of a long narrow room."
-              " It perfectly resembles the previous room,"
-              " except for the different dimenions."
-              " Directly in front of you, roughly a quarter"
-              " the way down the long room, stands a monster."
-              " And roughy halfway, in front of the first"
-              " visible exit, stands another."
+        print("\nYou find yourself at one end of a long narrow room.\n"
+              " It perfectly resembles the previous room,\n"
+              " except for the different dimenions.\n"
+              " Directly in front of you,\n roughly a quarter"
+              " the way down the long room,\n stands a monster.\n"
+              " And roughy halfway,\n in front of the first"
+              " visible exit,\n stands another.\n"
               " The second exit from the room is"
-              " at the very end, in the right corner."
-              " Once again, the veins of light are present,"
-              " flowing towards the two enemies."
-              " And once again neither looks particularly happy")
+              " at the very end,\n in the right corner.\n"
+              " Once again, the veins of light are present,\n"
+              " flowing towards the two enemies.\n"
+              " And once again neither looks particularly happy\n")
         prompt_user()
     else:
         print("You're")
@@ -299,20 +299,21 @@ def player_interact():
     """
     time.sleep(1)
     if Room.room_id == 1:
-        print("\nThere doesn't seem to be much to do in this room."
-              " It appears to be the entrance chamber of this dungeon."
+        print("\nThere doesn't seem to be much to do in this room.\n"
+              " It appears to be the entrance chamber of this dungeon.\n"
               " Maybe you should continue on?\n")
         prompt_user()
     elif Room.room_id == 2:
-        print("\nThe only thing to possibly interact with"
-              " is the monster, which is staring at you"
-              " with what can only be described as violent intent."
-              " 'Attack' would be a better bet")
+        print("\nThe only thing to possibly interact with\n"
+              " is the monster, which is staring at you\n"
+              " with what can only be described as violent intent.\n"
+              " 'Attack' would be a better bet\n")
         prompt_user()
     elif Room.room_id == 4:
-        print("\nOnce again the only seemingly interactable objects"
-              " in this room are both animated and very agressive."
-              " This is no place for pacifists unfortunately.")
+        print("\nOnce again the only seemingly interactable objects\n"
+              " in this room are both animated and very agressive.\n"
+              " This is no place for pacifists unfortunately.\n")
+        prompt_user()
 
 
 def abort_game():
