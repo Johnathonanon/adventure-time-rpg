@@ -203,7 +203,15 @@ def run_game():
             abort_game()
         elif door_choice == "right":
             print("\nYou proceed through the door to the right."
-                  "")
+                  " You enter a long straight corridor,"
+                  " at the end of which you can see"
+                  " light pouring from what is evidently the next room."
+                  " You continue forward cautiously,"
+                  " and once again you can see something moving"
+                  " ahead as you get closer to the doorway."
+                  " You enter the next room")
+            Room.room_id = 4
+            prompt_user()
 
 
 def inspect_room():
@@ -238,6 +246,20 @@ def inspect_room():
               " extremely ominous air coming from it. The right less so."
               " It seems apparent you won't be going anywhere with"
               " the monster blocking your way.")
+        prompt_user()
+    elif Room.room_id == 4:
+        print("\nYou find yourself at one end of a long narrow room."
+              " It perfectly resembles the previous room,"
+              " except for the different dimenions."
+              " Directly in front of you, roughly a quarter"
+              " the way down the long room, stands a monster."
+              " And roughy halfway, in front of the first"
+              " visible exit, stands another."
+              " The second exit from the room is"
+              " at the very end, in the right corner."
+              " Once again, the veins of light are present,"
+              " flowing towards the two enemies."
+              " And once again neither looks particularly happy")
         prompt_user()
     else:
         print("You're")
