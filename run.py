@@ -147,7 +147,7 @@ def run_game():
     """
     time.sleep(1)
     if Room.room_id == 1:
-        print("Ever since the age you were old enough to\n"
+        print("Ever since you were old enough to\n"
               "listen to stories and play with toys\n"
               "you have wished to be an Adventurer.\n"
               "One of those brave and special souls\n"
@@ -161,7 +161,6 @@ def run_game():
               "\nOnward Adventurer! \nTo Glory!\n"
               "\nYou enter the dungeon\n")
         prompt_user()
-
     elif Room.room_id == 2:
         print("\nYou continue forward through the only visible doorway,"
               " and find yourself in a long stone corridor."
@@ -180,6 +179,11 @@ def run_game():
               " but you steel yourself and move forward.\n"
               "\nYou enter the room\n")
         prompt_user()
+    elif Room.room_id == 3:
+        print("\nThere are two doorways exiting this room."
+              " One directly in front of you behind the slain monster,"
+              " and one to your right, the monsters left.\n")
+        input("Which door will you take?")
 
 
 def inspect_room():
@@ -255,9 +259,11 @@ def player_interact():
               " It appears to be the entrance chamber of this dungeon."
               " Maybe you should continue on?\n")
         prompt_user()
-
     elif Room.room_id == 2:
-        print("room 2")
+        print("\nThe only thing to possibly interact with"
+              " is the monster, which is staring at you"
+              " with what can only be described as violent intent."
+              " 'Attack' would be a better bet")
         prompt_user()
 
 
