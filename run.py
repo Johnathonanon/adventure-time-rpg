@@ -267,6 +267,20 @@ def inspect_room():
               "flowing towards the two enemies.\n"
               "And once again neither looks particularly happy\n")
         prompt_user()
+    elif Room.room_id == 5:
+        print("You are standing just inside the doorway,\n"
+              "at the end of what appears to be a stone bridge.\n"
+              "The room appears square,\n"
+              "and you have entered at one of the corners.\n"
+              "Glancing upwards, the room doesn't appear to have a ceiling,\n"
+              "just a darkness stretching infinitely to the heavens.\n"
+              "Similarly, peeking cautiously over the edge of the 'bridge'\n"
+              "shows a dark chasm reaching down into the bowels of the earth."
+              "At the end of the walkway is a platform.\n"
+              "And on that platfrom is a strange floating blue disc.\n"
+              "It's approximately twice your height,\n"
+              "and made of what looks like rolling magical vapor.\n"
+              "You feel the hairs rise on your arms as you approach.")
     else:
         print("You're")
 
