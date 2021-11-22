@@ -218,7 +218,7 @@ def run_game():
                   "Two choices.\n"
                   "Forward or right.")
             run_game()
-    elif Room.room_id == 4:
+    elif Room.room_id == 5:
         print("\nThere are two exits from this room.\n"
               "One to your left, halfway down the room,\n"
               "and one on you right, at the very end.")
@@ -292,6 +292,7 @@ def inspect_room():
               "It's approximately twice your height,\n"
               "and made of what looks like rolling magical vapor.\n"
               "You feel the hairs rise on your arms as you approach.")
+        prompt_user()
     else:
         print("You're")
 
