@@ -279,7 +279,9 @@ def run_battle():
         prompt_user()
     elif Room.room_id == 4:
         monster2 = Monster.build_monster()
-        print(f"You see a {monster2}")
+        monster3 = Monster.build_monster()
+        print(f"You are attacked by {monster2.monster_class}"
+              f" and {monster3.monster_class}")
         prompt_user()
     elif Room.room_id == 8:
         print("boss fight")
@@ -307,6 +309,10 @@ def player_interact():
               " with what can only be described as violent intent."
               " 'Attack' would be a better bet")
         prompt_user()
+    elif Room.room_id == 4:
+        print("\nOnce again the only seemingly interactable objects"
+              " in this room are both animated and very agressive."
+              " This is no place for pacifists unfortunately.")
 
 
 def abort_game():
