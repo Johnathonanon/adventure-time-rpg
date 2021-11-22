@@ -225,41 +225,41 @@ def inspect_room():
     time.sleep(1)
     if Room.room_id == 1:
         print("\nYou find your self in a large stone room,\n"
-              " 3 times as wide as it is long.\n"
-              " It's dark, but there appears to be some sort\n"
-              " of ethereal light coming from the stone itself.\n"
-              " This place is old,\n there's a thick layer of dust\n"
-              " and the air is stale.\n"
-              " There are statues lined at even intervals,\n"
-              " standing like sentinels around the perimter.\n"
-              " The only exit is directly in front of you.\n")
+              "3 times as wide as it is long.\n"
+              "It's dark, but there appears to be some sort\n"
+              "of ethereal light coming from the stone itself.\n"
+              "This place is old,\n there's a thick layer of dust\n"
+              "and the air is stale.\n"
+              "There are statues lined at even intervals,\n"
+              "standing like sentinels around the perimeter.\n"
+              "The only exit is directly in front of you.\n")
         prompt_user()
     elif Room.room_id == 2:
         print("\nYou are in a room roughly half the size of the first.\n"
-              " This room is the most brightly lit area so far.\n"
-              " It's made from the same stone as everywhere else,\n"
-              " except for what looks like narrow veins of pulsing"
+              "This room is the most brightly lit area so far.\n"
+              "It's made from the same stone as everywhere else,\n"
+              "except for what looks like narrow veins of pulsing"
               " light\n flowing from the walls to the center of the room.\n"
-              " In the center stands a very unhappy looking monster.\n"
-              " There are two exits from the room,\n one straight ahead\n"
-              " and one to the right.\n The one straight ahead has an\n"
-              " extremely ominous air coming from it. The right less so.\n"
-              " It seems apparent you won't be going anywhere\n with"
+              "In the center stands a very unhappy looking monster.\n"
+              "There are two exits from the room,\n one straight ahead\n"
+              "and one to the right.\n The one straight ahead has an\n"
+              "extremely ominous air coming from it. The right less so.\n"
+              "It seems apparent you won't be going anywhere\n with"
               " the monster blocking your way.\n")
         prompt_user()
     elif Room.room_id == 4:
         print("\nYou find yourself at one end of a long narrow room.\n"
-              " It perfectly resembles the previous room,\n"
-              " except for the different dimenions.\n"
-              " Directly in front of you,\n roughly a quarter"
+              "It perfectly resembles the previous room,\n"
+              "except for the different dimenions.\n"
+              "Directly in front of you,\n roughly a quarter"
               " the way down the long room,\n stands a monster.\n"
-              " And roughy halfway,\n in front of the first"
+              "And roughy halfway,\n in front of the first"
               " visible exit,\n stands another.\n"
-              " The second exit from the room is"
+              "The second exit from the room is"
               " at the very end,\n in the right corner.\n"
-              " Once again, the veins of light are present,\n"
-              " flowing towards the two enemies.\n"
-              " And once again neither looks particularly happy\n")
+              "Once again, the veins of light are present,\n"
+              "flowing towards the two enemies.\n"
+              "And once again neither looks particularly happy\n")
         prompt_user()
     else:
         print("You're")
@@ -287,8 +287,8 @@ def run_battle():
         print("boss fight")
         prompt_user()
     else:
-        print("\nI know you're eager Adventurer..."
-              " but there's nothing to fight..."
+        print("\nI know you're eager Adventurer...\n"
+              " but there's nothing to fight...\n"
               " except perhaps your own inner demons?")
         prompt_user()
 
