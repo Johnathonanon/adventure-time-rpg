@@ -106,7 +106,7 @@ def start():
 
     while True:
 
-        start_prompt = input("\nAre you ready to begin? y/n ").lower()
+        start_prompt = input("\nAre you ready to begin? y/n :").lower()
 
         if start_prompt == "y":
             print("\nExcellent, Lets go!\n")
@@ -182,8 +182,28 @@ def run_game():
     elif Room.room_id == 3:
         print("\nThere are two doorways exiting this room."
               " One directly in front of you behind the slain monster,"
-              " and one to your right, the monsters left.\n")
-        input("Which door will you take?")
+              " and one to your right.\n")
+        door_choice = input("Which door will you take? forward/right :").lower()
+        if door_choice == "forward":
+            print("\nYou proceed through the door directly in front of you."
+                  " The hallway you find yourself in is the darkest yet."
+                  " There seems to be an ominous feeling in the air,"
+                  " and a somewhat tangy smell assualts your nose"
+                  " The doorway to the room ahead appears before you,"
+                  " and you continue on into the unknown."
+                  " As soon as you step foot over the threshold,"
+                  " a door slams shut behind you,"
+                  " sealing you from the corridor behind."
+                  " A hissing noise accompanies the appearance of"
+                  " a thick luminescent green fog,"
+                  " rapidly rising from every surface."
+                  " Your last thought as the world goes black"
+                  " is how poor your luck must be,"
+                  " but perhaps in another life you will succeed.")
+            abort_game()
+        elif door_choice == "right":
+            print("\nYou proceed through the door to the right."
+                  "")
 
 
 def inspect_room():
