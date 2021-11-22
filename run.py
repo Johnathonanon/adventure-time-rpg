@@ -173,45 +173,51 @@ def run_game():
               "as it's the only way to go.\n"
               "Ahead you can see a doorway into a room\n"
               "far brighter than the hallway you're presently in.\n"
-              "There seems to be the shadow of ...\n"
-              "something...\n moving around in there.\n"
+              "There seems to be the shadow of...\n"
+              "something...\nmoving around in there.\n"
               "A frisson of nerves runs through you\n"
               "but you steel yourself and move forward.\n"
               "\nYou enter the room\n")
         prompt_user()
     elif Room.room_id == 3:
         print("\nThere are two doorways exiting this room.\n"
-              " One directly in front of you behind the slain monster,\n"
-              " and one to your right.\n")
+              "One directly in front of you behind the slain monster,\n"
+              "and one to your right.")
         door_choice = input("\nWhich way will you go? forward/right :").lower()
         if door_choice == "forward":
             print("\nYou proceed through the door directly in front of you.\n"
-                  " The hallway you find yourself in is the darkest yet.\n"
-                  " There seems to be an ominous feeling in the air,\n"
-                  " and a somewhat tangy smell assualts your nose.\n"
-                  " The doorway to the room ahead appears before you,\n"
-                  " and you continue on into the unknown.\n"
-                  " As soon as you step foot over the threshold,\n"
-                  " a door slams shut behind you,\n"
-                  " sealing you from the corridor behind.\n"
-                  " A hissing noise accompanies the appearance\n of"
+                  "The hallway you find yourself in is the darkest yet.\n"
+                  "There seems to be an ominous feeling in the air,\n"
+                  "and a somewhat tangy smell assualts your nose.\n"
+                  "The doorway to the room ahead appears before you,\n"
+                  "and you continue on into the unknown.\n"
+                  "As soon as you step foot over the threshold,\n"
+                  "a door slams shut behind you,\n"
+                  "sealing you from the corridor behind.\n"
+                  "A hissing noise accompanies the appearance\nof"
                   " a thick luminescent green fog,\n"
-                  " rapidly rising from every surface.\n"
-                  " Your last thought as the world goes black\n"
-                  " is how poor your luck must be,\n"
-                  " but perhaps in another life you will succeed.\n")
+                  "rapidly rising from every surface.\n"
+                  "Your last thought as the world goes black\n"
+                  "is how poor your luck must be,\n"
+                  "but perhaps in another life you will succeed...\n")
             abort_game()
         elif door_choice == "right":
             print("\nYou proceed through the door to the right.\n"
-                  " You enter a long straight corridor,\n"
-                  " at the end of which you can see\n"
-                  " light pouring from what is evidently the next room.\n"
-                  " You continue forward cautiously,\n"
-                  " and once again you can see something moving\n"
-                  " ahead as you get closer to the doorway.\n"
-                  " You enter the next room")
+                  "You enter a long straight corridor,\n"
+                  "at the end of which you can see\n"
+                  "light pouring from what is evidently the next room.\n"
+                  "You continue forward cautiously,\n"
+                  "and once again you can see something moving\n"
+                  "ahead as you get closer to the doorway.\n"
+                  "\nYou enter the next room")
             Room.room_id = 4
             prompt_user()
+        else:
+            print("\nForward or left.\n"
+                  "That's it.\n"
+                  "Two choices.\n"
+                  "Forward or left")
+            run_game()
 
 
 def inspect_room():
@@ -244,8 +250,8 @@ def inspect_room():
               "There are two exits from the room,\none straight ahead\n"
               "and one to the right.\nThe one straight ahead has an\n"
               "extremely ominous air coming from it. The right less so.\n"
-              "It seems apparent you won't be going anywhere\n with"
-              "the monster blocking your way.\n")
+              "It seems apparent you won't be going anywhere\nwith"
+              " the monster blocking your way.\n")
         prompt_user()
     elif Room.room_id == 4:
         print("\nYou find yourself at one end of a long narrow room.\n"
