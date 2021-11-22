@@ -218,6 +218,15 @@ def run_game():
                   "Two choices.\n"
                   "Forward or left")
             run_game()
+    elif Room.room_id == 4:
+        print("\nThere are two exits from this room.\n"
+              "One to your left, halfway down the room,\n"
+              "and one on you right, at the very end.")
+        door_choice = input("\nWhich way will you go? left/right :").lower()
+        if door_choice == "left":
+            print("left")
+        elif door_choice == "right":
+            print("right")
 
 
 def inspect_room():
