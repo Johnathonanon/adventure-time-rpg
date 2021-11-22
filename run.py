@@ -183,7 +183,7 @@ def run_game():
         print("\nThere are two doorways exiting this room."
               " One directly in front of you behind the slain monster,"
               " and one to your right.\n")
-        door_choice = input("Which door will you take? forward/right :").lower()
+        door_choice = input("Which way will you go? forward/right :").lower()
         if door_choice == "forward":
             print("\nYou proceed through the door directly in front of you."
                   " The hallway you find yourself in is the darkest yet."
