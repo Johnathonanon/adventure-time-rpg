@@ -225,8 +225,10 @@ def run_game():
         door_choice = input("\nWhich way will you go? left/right :").lower()
         if door_choice == "left":
             print("left")
+            run_game()
         elif door_choice == "right":
             print("right")
+            run_game()
 
 
 def inspect_room():
