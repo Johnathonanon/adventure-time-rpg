@@ -237,8 +237,10 @@ def run_game():
                   "This way gives you a feeling of home.\n")
             door_choice = input("\nWhich way? left/right :").lower()
             if door_choice == "left":
+                Room.room_id = 7
                 print("left")
             elif door_choice == "right":
+                Room.room_id = 6
                 print("right")
             else:
                 print("Unfortunately you cannot phase through walls...\n"
