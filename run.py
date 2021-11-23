@@ -249,11 +249,14 @@ def run_game():
                       "It feels like you are looking through frosted glass,\n"
                       "with little visible except that blue glow.\n"
                       "Your curiosity trumps your hesitation,\n"
-                      "and you step forward through the haze.\n")
+                      "and you step forward through the haze.\n"
+                      "As you do, the haze solidifies,\n"
+                      "and you realise you will not be returning that way.\n")
+                prompt_user()
             else:
                 print("Unfortunately you cannot phase through walls...\n"
                       "It's left or right again.")
-            run_game()
+                run_game()
         elif door_choice == "right":
             print("\nDespite your misgivings, you decide to take\n"
                   "the doorway in the far right corner of the room.\n"
@@ -277,6 +280,8 @@ def run_game():
             print("Once again, only two choices.\n"
                   "I wish I could give you another option,\n"
                   "but alas I'm just a voice in your head...")
+    elif Room.room_id == 6:
+        print("no")
 
 
 def inspect_room():
@@ -341,7 +346,7 @@ def inspect_room():
               "And on that platfrom is a strange floating blue disc.\n"
               "It's approximately twice your height,\n"
               "and made of what looks like rolling magical vapor.\n"
-              "You feel the hairs rise on your arms as you approach.")
+              "You feel the hairs rise on your arms as you approach.\n")
         prompt_user()
     else:
         print("You're")
