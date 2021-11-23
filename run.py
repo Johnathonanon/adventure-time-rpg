@@ -56,7 +56,6 @@ class Player():
 class Monster():
     """
     Main monster class. Sets monster class, hp, and attack.
-    Has method for attacking player
     """
     def __init__(self, monster_class, health_points, attack):
         self.monster_class = monster_class
@@ -89,13 +88,11 @@ class Monster():
 class Room():
     """
     Main room class, builds instance of room as player progresses through game.
-    Sets room_class, ID, and size.
-    Has method describing room to player
+    Sets room_is and monster_presence
     """
-    def __init__(self, room_class, room_id, size):
-        self.room_class = room_class
+    def __init__(self, room_id, monster_presence):
         self.room_id = room_id
-        self.size = size
+        self.monster_presence = monster_presence
 
 
 def start():
