@@ -128,7 +128,7 @@ def prompt_user():
         if Room.room_id == 6:
             time.sleep(1)
             print("\nThe door is shut and there is no way out!\n"
-                  "Maybe this strange blue disc holds the answer...\n")
+                  "Maybe try inspecting your surroundings...\n")
             prompt_user()
         else:
             Room.room_id = Room.room_id + 1
@@ -428,6 +428,9 @@ def player_interact():
               "in this room are both animated and very agressive.\n"
               "This is no place for pacifists unfortunately.\n")
         prompt_user()
+    elif Room.room_id == 7:
+        print("\nYou hesitantly approach the blue disc.\n"
+              "")
 
 
 def abort_game():
