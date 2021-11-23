@@ -221,7 +221,7 @@ def run_game():
               "and one on you right, at the very end.")
         door_choice = input("\nWhich way will you go? left/right :").lower()
         if door_choice == "left":
-            print("You exit through the left hand door,\n"
+            print("\nYou exit through the left hand door,\n"
                   "and enter another long dimly lit corridor.\n"
                   "After a few minutes of walking\n"
                   "you find yourself at a junction.\n"
@@ -238,13 +238,24 @@ def run_game():
                 print("left")
             elif door_choice == "right":
                 Room.room_id = 6
-                print("right")
+                print("\nYou decide to take the right branch,"
+                      "and slowly but surely you can see\n"
+                      "the blue glow in the distance is getting brighter.\n"
+                      "As you get closer the air seems to crackle,\n"
+                      "and your hair begins to stand slightly on end.\n"
+                      "Eventually you reach the entrance to the next room,\n"
+                      "just to find that there is a haze\n"
+                      "blocking your view of the room beyond.\n"
+                      "It feels like you are looking through frosted glass,\n"
+                      "with little visible except that blue glow.\n"
+                      "Your curiosity trumps your hesitation,\n"
+                      "and you step forward through the haze.\n")
             else:
                 print("Unfortunately you cannot phase through walls...\n"
                       "It's left or right again.")
             run_game()
         elif door_choice == "right":
-            print("Despite your misgivings, you decide to take\n"
+            print("\nDespite your misgivings, you decide to take\n"
                   "the doorway in the far right corner of the room.\n"
                   "It enters into a dark passageway,\n"
                   "the end of which cannot be seen.\n"
@@ -254,13 +265,13 @@ def run_game():
                   "you feel like you can hear a deep rumbling.\n"
                   "You continue forward and eventually\n"
                   "you can tell you have entered another room.\n"
-                  "You can barely make out the fact that it appears\n"
-                  "cylindrical, and the rumbling has gotten louder."
+                  "In the dark, you can barely make out the fact that it is\n"
+                  "cylindrical, and the rumbling has gotten louder.\n"
                   "Just as you're about to retreat,\n"
                   "a door slams shut behind you,\n"
                   "and with a deafening grating noise\n"
                   "the floor gives way beneath you.\n"
-                  "Your last thought is regret you didn't make it further.")
+                  "Your last thought is regret you didn't make it further.\n")
             abort_game()
         else:
             print("Once again, only two choices.\n"
@@ -312,13 +323,13 @@ def inspect_room():
               "The second exit from the room is"
               " at the very end,\nin the right corner.\n"
               "Similar to the last room, this door\n"
-              " emits an extremely ominous air.\n"
+              "emits an extremely ominous air.\n"
               "Once again, the veins of light are present,\n"
               "flowing towards the two enemies.\n"
               "And once again neither looks particularly happy\n")
         prompt_user()
     elif Room.room_id == 6:
-        print("You are standing just inside the doorway,\n"
+        print("\nYou are standing just inside the doorway,\n"
               "at the end of what appears to be a stone bridge.\n"
               "The room appears square,\n"
               "and you have entered at one of the corners.\n"
