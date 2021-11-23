@@ -126,7 +126,10 @@ def prompt_user():
 
     if choice == "Continue":
         if Room.room_id == 6:
-            Room.room_id = 6
+            time.sleep(1)
+            print("\nThe door is shut and there is no way out!\n"
+                  "Maybe this strange blue disc holds the answer...\n")
+            prompt_user()
         else:
             Room.room_id = Room.room_id + 1
             run_game()
@@ -282,6 +285,7 @@ def run_game():
             print("Once again, only two choices.\n"
                   "I wish I could give you another option,\n"
                   "but alas I'm just a voice in your head...")
+            run_game()
     elif Room.room_id == 6:
         print("no")
 
