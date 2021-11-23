@@ -429,8 +429,21 @@ def player_interact():
               "This is no place for pacifists unfortunately.\n")
         prompt_user()
     elif Room.room_id == 7:
-        print("\nYou hesitantly approach the blue disc.\n"
-              "")
+        print("\nYou hesitantly approach the blue disc in front of you.\n"
+              "If it wasn't for the fact you are trapped in here,\n"
+              "you would be less than enthusiastic about interacting\n"
+              "with some strange, evidently magical, object.\n"
+              "As you get nearer the disc seems to\n"
+              "start exerting a pulling force on you.\n"
+              "The force drags you closer and closer,\n"
+              "until finally a wisp of your clothing\n"
+              "is touched by the swirling blue vapor.\n"
+              "There is a flash of light,\n"
+              "and a sound like a wind chime,\n"
+              "and you find yourself back at the dungeon entrance...\n"
+              "You feel a strange sense of deja vu")
+        Room.room_id = 1
+        prompt_user()
 
 
 def abort_game():
