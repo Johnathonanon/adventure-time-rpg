@@ -224,7 +224,25 @@ def run_game():
               "and one on you right, at the very end.")
         door_choice = input("\nWhich way will you go? left/right :").lower()
         if door_choice == "left":
-            print("left")
+            print("You exit through the left hand door,\n"
+                  "and enter another long dimly lit corridor.\n"
+                  "After a few minutes of walking\n"
+                  "you find yourself at a junction.\n"
+                  "The left path continues to what appears\n"
+                  "to be a blank wall in the distance,\n"
+                  "however, that way gives you a sense of excitement.\n"
+                  "The right stretches farther than you can see,\n"
+                  "but you can barely make out a blue-ish glow\n"
+                  "right at the end of the path.\n"
+                  "This way gives you a feeling of home.\n")
+            door_choice = input("\nWhich way? left/right :").lower()
+            if door_choice == "left":
+                print("left")
+            elif door_choice == "right":
+                print("right")
+            else:
+                print("Unfortunately you cannot phase through walls...\n"
+                      "It's left or right again.")
             run_game()
         elif door_choice == "right":
             print("Despite your misgivings, you decide to take\n"
@@ -245,6 +263,10 @@ def run_game():
                   "the floor gives way beneath you.\n"
                   "Your last thought is regret you didn't make it further.")
             abort_game()
+        else:
+            print("Once again, only two choices.\n"
+                  "I wish I could give you another option,\n"
+                  "but alas I'm just a voice in your head...")
 
 
 def inspect_room():
