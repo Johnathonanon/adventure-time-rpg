@@ -240,7 +240,14 @@ def run_game():
             door_choice = input("\nWhich way? left/right :").lower()
             if door_choice == "left":
                 Room.room_id = 7
-                print("left")
+                print("\nYou decide to take the left path,\n"
+                      "and eventually you come to a right corner,\n"
+                      "around which you can feel a very slight breeze.\n"
+                      "You continue onwards and approach the next room,\n"
+                      "the light of which is shining brightly.\n"
+                      "Before you enter you scan the room for threats\n"
+                      "but see nothing...\n"
+                      "You cautiously enter...\n")
             elif door_choice == "right":
                 Room.room_id = 6
                 print("\nYou decide to take the right branch,"
@@ -354,6 +361,17 @@ def inspect_room():
               "and made of what looks like rolling magical vapor.\n"
               "You feel the hairs rise on your arms as you approach.\n")
         prompt_user()
+    elif Room.room_id == 7:
+        print("You are standing in a brightly lit circular room,\n"
+              "smaller than any so far.\n"
+              "To the right of the room, not visible from the hallway,\n"
+              "is a small waterfall, flowing into a basin."
+              "There's a small wooden cup sitting on the side of the basin,\n"
+              "and a plaque that reads:\n"
+              "****************************************\n"
+              "REST WEARY ADVENTURER AND TAKE A DRINK\n"
+              "FOR THE NEXT ROOM WILL PUSH YOU TO THE BRINK\n"
+              "****************************************\n")
     else:
         print("You're")
 
