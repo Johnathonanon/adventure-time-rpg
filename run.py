@@ -227,8 +227,24 @@ def run_game():
             print("left")
             run_game()
         elif door_choice == "right":
-            print("right")
-            prompt_user()
+            print("Despite your misgivings, you decide to take\n"
+                  "the doorway in the far right corner of the room.\n"
+                  "It enters into a dark passageway,\n"
+                  "the end of which cannot be seen.\n"
+                  "As you cautiously shuffle forward in the dark,\n"
+                  "you eventually reach a right turn in the tunnel,\n"
+                  "and as you proceed on\n"
+                  "you feel like you can hear a deep rumbling.\n"
+                  "You continue forward and eventually\n"
+                  "you can tell you have entered another room.\n"
+                  "You can barely make out the fact that it appears\n"
+                  "cylindrical, and the rumbling has gotten louder."
+                  "Just as you're about to retreat,\n"
+                  "a door slams shut behind you,\n"
+                  "and with a deafening grating noise\n"
+                  "the floor gives way beneath you.\n"
+                  "Your last thought is regret you didn't make it further.")
+            abort_game()
 
 
 def inspect_room():
@@ -274,11 +290,13 @@ def inspect_room():
               " visible exit,\nstands another.\n"
               "The second exit from the room is"
               " at the very end,\nin the right corner.\n"
+              "Similar to the last room, this door\n"
+              " emits an extremely ominous air.\n"
               "Once again, the veins of light are present,\n"
               "flowing towards the two enemies.\n"
               "And once again neither looks particularly happy\n")
         prompt_user()
-    elif Room.room_id == 5:
+    elif Room.room_id == 6:
         print("You are standing just inside the doorway,\n"
               "at the end of what appears to be a stone bridge.\n"
               "The room appears square,\n"
