@@ -266,8 +266,11 @@ def run_game():
                       "and you realise you will not be returning that way.\n")
                 prompt_user()
             else:
-                print("Unfortunately you cannot phase through walls...\n"
-                      "It's left or right again.")
+                print("\nYou have a bout of indecision,and end up\n"
+                      "running headlong into the wall in front of you.\n"
+                      "A strange repulsive force sends you hurtling\n"
+                      " backwards down the way you just came\n"
+                      "and back into the previous room.")
                 run_game()
         elif door_choice == "right":
             print("\nDespite your misgivings, you decide to take\n"
