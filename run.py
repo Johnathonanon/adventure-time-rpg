@@ -46,8 +46,6 @@ class Player():
 
         Room.room_id = 1
 
-        run_game()
-
         player = cls(name, player_class, health_points, attack)
 
         return player
@@ -108,6 +106,7 @@ def start():
         if start_prompt == "y":
             print("\nExcellent, Lets go!\n")
             Player.build_player()
+            run_game()
             return False
         elif start_prompt == "n":
             abort_game()
@@ -126,8 +125,11 @@ def prompt_user():
     choice = enquiries.choose("", player_choices)
 
     if choice == "Continue":
-        Room.room_id = Room.room_id + 1
-        run_game()
+        if Room.room_id == 6:
+            Room.room_id = 6
+        else:
+            Room.room_id = Room.room_id + 1
+            run_game()
     elif choice == "Inspect":
         inspect_room()
     elif choice == "Attack":
@@ -155,7 +157,7 @@ def run_game():
               "and at present you are standing at the entrance,\n"
               "bracing yourself for what's to come.\n"
               "As a beginner job this should be easy, shouldn't it?\n"
-              "\nOnward Adventurer! \nTo Glory!\n"
+              "\nOnward Mighty Adventurer! \nTo Glory!\n"
               "\nYou enter the dungeon\n")
         prompt_user()
     elif Room.room_id == 2:
