@@ -292,7 +292,7 @@ def run_game():
                   "Your last thought is regret you didn't make it further.\n")
             abort_game()
         else:
-            print("Once again, only two choices.\n"
+            print("\nOnce again, only two choices.\n"
                   "I wish I could give you another option,\n"
                   "but alas I'm just a voice in your head...")
             run_game()
@@ -428,7 +428,7 @@ def player_interact():
               "in this room are both animated and very agressive.\n"
               "This is no place for pacifists unfortunately.\n")
         prompt_user()
-    elif Room.room_id == 7:
+    elif Room.room_id == 6:
         print("\nYou hesitantly approach the blue disc in front of you.\n"
               "If it wasn't for the fact you are trapped in here,\n"
               "you would be less than enthusiastic about interacting\n"
