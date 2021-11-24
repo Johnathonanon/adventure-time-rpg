@@ -6,6 +6,49 @@ import enquiries
 
 room_id_list = [1, 2, 3, 4, 5, 6, 7, 8]
 
+command_list = [
+    {"run_game": "",
+     "inspect_room": "",
+     "player_interact": "",
+     "run_battle": "",
+     "abort_game": ""},
+    {"run_game": "",
+     "inspect_room": "",
+     "player_interact": "",
+     "run_battle": "",
+     "abort_game": ""},
+    {"run_game": "",
+     "inspect_room": "",
+     "player_interact": "",
+     "run_battle": "",
+     "abort_game": ""},
+    {"run_game": "",
+     "inspect_room": "",
+     "player_interact": "",
+     "run_battle": "",
+     "abort_game": ""},
+    {"run_game": "",
+     "inspect_room": "",
+     "player_interact": "",
+     "run_battle": "",
+     "abort_game": ""},
+    {"run_game": "",
+     "inspect_room": "",
+     "player_interact": "",
+     "run_battle": "",
+     "abort_game": ""},
+    {"run_game": "",
+     "inspect_room": "",
+     "player_interact": "",
+     "run_battle": "",
+     "abort_game": ""},
+    {"run_game": "",
+     "inspect_room": "",
+     "player_interact": "",
+     "run_battle": "",
+     "abort_game": ""}
+]
+
 
 class Player():
     """
@@ -95,7 +138,7 @@ class Room():
         self.monster_presence = monster_presence
 
     def inspect_room(self):
-        print(game_text_list[0]["inspect_room"])
+        print(command_list[0]["inspect_room"])
 
 
 def start():
