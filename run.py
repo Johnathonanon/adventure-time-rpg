@@ -6,7 +6,8 @@ import enquiries
 
 
 room_list = [
-    {"description": "\nYou find your self in a large stone room,\n"
+    {"progress_text": "bla",
+     "description": "\nYou find your self in a large stone room,\n"
                     "3 times as wide as it is long.\n"
                     "It's dark, but there appears to be some sort\n"
                     "of ethereal light coming from the stone itself.\n"
@@ -18,7 +19,7 @@ room_list = [
      "interaction": "\nThere doesn't seem to be much to do in this room.\n"
                     "It appears to be the entrance chamber of this dungeon.\n"
                     "Maybe you should continue on?\n",
-     "monster_presence": "0",
+     "monster_presence": 0,
      "direction_choices": {
          "forward": 2
      }},
@@ -37,14 +38,14 @@ room_list = [
                     "is the monster, which is staring at you\n"
                     "with what can only be described as violent intent.\n"
                     "Attacking would be a better bet\n",
-     "monster_presence": "1",
+     "monster_presence": 1,
      "direction_choices": {
          "forward": 3,
          "right": 4
      }},
     {"description": "none",
      "interaction": "none",
-     "monster_presence": "0",
+     "monster_presence": 0,
      "direction_choices": "none"},
     {"description": "\nYou find yourself at one end of a long narrow room.\n"
                     "It perfectly resembles the previous room,\n"
@@ -63,14 +64,14 @@ room_list = [
      "interaction": "\nOnce again the only seemingly interactable objects\n"
                     "in this room are both animated and very agressive.\n"
                     "This is no place for pacifists unfortunately.\n",
-     "monster_presence": "1",
+     "monster_presence": 1,
      "direction_choices": {
          "left": 6,
          "right": 5
      }},
     {"description": "none",
      "interaction": "none",
-     "monster_presence": "0",
+     "monster_presence": 0,
      "direction_choices": "none"},
     {"description": "\nYou are standing just inside the doorway,\n"
                     "at the end of what appears to be a stone bridge.\n"
@@ -102,7 +103,7 @@ room_list = [
                     "and a sound like a wind chime,\n"
                     "and you find yourself back at the dungeon entrance...\n"
                     "You feel a strange sense of deja vu.",
-     "monster_presence": "0",
+     "monster_presence": 0,
      "direction_choices": "none"},
     {"description": "You are standing in a brightly lit circular room,\n"
                     "smaller than any so far.\n"
@@ -116,13 +117,13 @@ room_list = [
                     "FOR THE NEXT ROOM WILL PUSH YOU TO THE BRINK\n"
                     "****************************************\n",
      "interaction": "room 7 interaction",
-     "monster_presence": "0",
+     "monster_presence": 0,
      "direction_choices": {
          "forward": 8
      }},
     {"description": "room 8",
      "interaction": "",
-     "monster_presence": "1",
+     "monster_presence": 1,
      "direction_choices": ""}
 ]
 
@@ -251,104 +252,7 @@ def run_game():
     Moves players through game while giving brief description
     """
     time.sleep(1)
-    if Room.room_id == 1:
-        prompt_user()
-    elif Room.room_id == 2:
-        prompt_user()
-    elif Room.room_id == 3:
-        print("\nThere are two doorways exiting this room.\n"
-              "One directly in front of you behind the slain monster,\n"
-              "and one to your right.")
-        door_choice = input("\nWhich way will you go? forward/right :").lower()
-        if door_choice == "forward":
-            abort_game()
-        elif door_choice == "right":
-            Room.room_id = 4
-            prompt_user()
-        else:
-            print("\nForward or right.\n"
-                  "That's it.\n"
-                  "Two choices.\n"
-                  "Forward or right.")
-            run_game()
-    elif Room.room_id == 5:
-        print("\nThere are two exits from this room.\n"
-              "One to your left, halfway down the room,\n"
-              "and one on you right, at the very end.")
-        door_choice = input("\nWhich way will you go? left/right :").lower()
-        if door_choice == "left":
-            print("\nYou exit through the left hand door,\n"
-                  "and enter another long dimly lit corridor.\n"
-                  "After a few minutes of walking\n"
-                  "you find yourself at a junction.\n"
-                  "The left path continues to what appears\n"
-                  "to be a blank wall in the distance,\n"
-                  "however, that way gives you a sense of excitement.\n"
-                  "The right stretches farther than you can see,\n"
-                  "but you can barely make out a blue-ish glow\n"
-                  "right at the end of the path.\n"
-                  "This way gives you a feeling of home.\n")
-            door_choice = input("\nWhich way? left/right :").lower()
-            if door_choice == "left":
-                Room.room_id = 7
-                print("\nYou decide to take the left path,\n"
-                      "and eventually you come to a right corner,\n"
-                      "around which you can feel a very slight breeze.\n"
-                      "You continue onwards and approach the next room,\n"
-                      "the light of which is shining brightly.\n"
-                      "Before you enter you scan the room for threats\n"
-                      "but see nothing...\n"
-                      "You cautiously enter...\n")
-            elif door_choice == "right":
-                Room.room_id = 6
-                print("\nYou decide to take the right branch,"
-                      "and slowly but surely you can see\n"
-                      "the blue glow in the distance is getting brighter.\n"
-                      "As you get closer the air seems to crackle,\n"
-                      "and your hair begins to stand slightly on end.\n"
-                      "Eventually you reach the entrance to the next room,\n"
-                      "just to find that there is a haze\n"
-                      "blocking your view of the room beyond.\n"
-                      "It feels like you are looking through frosted glass,\n"
-                      "with little visible except that blue glow.\n"
-                      "Your curiosity trumps your hesitation,\n"
-                      "and you step forward through the haze.\n"
-                      "As you do, the haze solidifies,\n"
-                      "and you realise you will not be returning that way.\n")
-                prompt_user()
-            else:
-                print("\nYou have a bout of indecision,and end up\n"
-                      "running headlong into the wall in front of you.\n"
-                      "A strange repulsive force sends you hurtling\n"
-                      " backwards down the way you just came\n"
-                      "and back into the previous room.")
-                run_game()
-        elif door_choice == "right":
-            print("\nDespite your misgivings, you decide to take\n"
-                  "the doorway in the far right corner of the room.\n"
-                  "It enters into a dark passageway,\n"
-                  "the end of which cannot be seen.\n"
-                  "As you cautiously shuffle forward in the dark,\n"
-                  "you eventually reach a right turn in the tunnel,\n"
-                  "and as you proceed on\n"
-                  "you feel like you can hear a deep rumbling.\n"
-                  "You continue forward and eventually\n"
-                  "you can tell you have entered another room.\n"
-                  "In the dark, you can barely make out the fact that it is\n"
-                  "cylindrical, and the rumbling has gotten louder.\n"
-                  "Just as you're about to retreat,\n"
-                  "a door slams shut behind you,\n"
-                  "and with a deafening grating noise\n"
-                  "the floor gives way beneath you.\n"
-                  "Your last thought is regret you didn't make it further.\n")
-            abort_game()
-        else:
-            print("\nOnce again, only two choices.\n"
-                  "I wish I could give you another option,\n"
-                  "but alas I'm just a voice in your head...")
-            run_game()
-    elif Room.room_id == 6:
-        print("no")
+    print(room_list[current_room]["progress_text"])
 
 
 def inspect_room(current_room):
