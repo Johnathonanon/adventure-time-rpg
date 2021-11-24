@@ -4,6 +4,8 @@ import time
 
 import enquiries
 
+room_id_list = [1, 2, 3, 4, 5, 6, 7, 8]
+
 
 class Player():
     """
@@ -86,11 +88,14 @@ class Monster():
 class Room():
     """
     Main room class, builds instance of room as player progresses through game.
-    Sets room_is and monster_presence
+    Sets room_id and monster_presence
     """
     def __init__(self, room_id, monster_presence):
         self.room_id = room_id
         self.monster_presence = monster_presence
+
+    def inspect_room(self):
+        print(game_text_list[0]["inspect_room"])
 
 
 def start():
