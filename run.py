@@ -182,9 +182,6 @@ class Room():
     def inspect_room(self):
         print(room_list[current_room]["description"])
 
-    def progress_room(self):
-        print(room_list[current_room]["progression"])
-
 
 def start():
     """
