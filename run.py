@@ -6,46 +6,43 @@ import enquiries
 
 room_id_list = [1, 2, 3, 4, 5, 6, 7, 8]
 
-command_list = [
-    {"run_game": "",
-     "inspect_room": "",
+room_list = [
+    {"description": "",
      "player_interact": "",
-     "run_battle": "",
+     "monster_presence": "",
+     "abort_game": ""},
+    {"description": "",
+     "player_interact": "",
+     "monster_presence": "",
+     "abort_game": ""},
+    {"description": "",
+     "player_interact": "",
+     "monster_presence": "",
      "abort_game": ""},
     {"run_game": "",
-     "inspect_room": "",
+     "description": "",
      "player_interact": "",
-     "run_battle": "",
+     "monster_presence": "",
      "abort_game": ""},
     {"run_game": "",
-     "inspect_room": "",
+     "description": "",
      "player_interact": "",
-     "run_battle": "",
+     "monster_presence": "",
      "abort_game": ""},
     {"run_game": "",
-     "inspect_room": "",
+     "description": "",
      "player_interact": "",
-     "run_battle": "",
+     "monster_presence": "",
      "abort_game": ""},
     {"run_game": "",
-     "inspect_room": "",
+     "description": "",
      "player_interact": "",
-     "run_battle": "",
+     "monster_presence": "",
      "abort_game": ""},
     {"run_game": "",
-     "inspect_room": "",
+     "description": "",
      "player_interact": "",
-     "run_battle": "",
-     "abort_game": ""},
-    {"run_game": "",
-     "inspect_room": "",
-     "player_interact": "",
-     "run_battle": "",
-     "abort_game": ""},
-    {"run_game": "",
-     "inspect_room": "",
-     "player_interact": "",
-     "run_battle": "",
+     "monster_presence": "",
      "abort_game": ""}
 ]
 
@@ -212,22 +209,6 @@ def run_game():
               "\nYou enter the dungeon\n")
         prompt_user()
     elif Room.room_id == 2:
-        print("\nYou continue forward through the only visible doorway,\n"
-              "and find yourself in a long stone corridor.\n"
-              "The corridor also gives off a dull ambient light,\n"
-              "evidently magical in nature,\n"
-              "which is just barely enough to see by.\n"
-              "It's obviously very old, with years of accumulated dust,\n"
-              "and cobwebs hanging from ceilings and corners.\n"
-              "You come to a left turn in the passage and continue on,\n"
-              "as it's the only way to go.\n"
-              "Ahead you can see a doorway into a room\n"
-              "far brighter than the hallway you're presently in.\n"
-              "There seems to be the shadow of...\n"
-              "something...\nmoving around in there.\n"
-              "A frisson of nerves runs through you\n"
-              "but you steel yourself and move forward.\n"
-              "\nYou enter the room\n")
         prompt_user()
     elif Room.room_id == 3:
         print("\nThere are two doorways exiting this room.\n"
@@ -235,31 +216,8 @@ def run_game():
               "and one to your right.")
         door_choice = input("\nWhich way will you go? forward/right :").lower()
         if door_choice == "forward":
-            print("\nYou proceed through the door directly in front of you.\n"
-                  "The hallway you find yourself in is the darkest yet.\n"
-                  "There seems to be an ominous feeling in the air,\n"
-                  "and a somewhat tangy smell assualts your nose.\n"
-                  "The doorway to the room ahead appears before you,\n"
-                  "and you continue on into the unknown.\n"
-                  "As soon as you step foot over the threshold,\n"
-                  "a door slams shut behind you,\n"
-                  "sealing you from the corridor behind.\n"
-                  "A hissing noise accompanies the appearance\nof"
-                  " a thick luminescent green fog,\n"
-                  "rapidly rising from every surface.\n"
-                  "Your last thought as the world goes black\n"
-                  "is how poor your luck must be,\n"
-                  "but perhaps in another life you will succeed...\n")
             abort_game()
         elif door_choice == "right":
-            print("\nYou proceed through the door to the right.\n"
-                  "You enter a long straight corridor,\n"
-                  "at the end of which you can see\n"
-                  "light pouring from what is evidently the next room.\n"
-                  "You continue forward cautiously,\n"
-                  "and once again you can see something moving\n"
-                  "ahead as you get closer to the doorway.\n"
-                  "\nYou enter the next room")
             Room.room_id = 4
             prompt_user()
         else:
