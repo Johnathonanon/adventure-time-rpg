@@ -53,11 +53,9 @@ class Player():
     Has methods for progressing through dungeon, exploring, interacting,
     fleeing and attacking
     """
-    def __init__(self, player_name, player_class, health_points, attack):
+    def __init__(self, player_name, player_class):
         self.player_name = player_name
         self.player_class = player_class
-        self.health_points = health_points
-        self.attack = attack
 
 
 class Monster():
@@ -109,8 +107,17 @@ def start():
     """
     Starts game and confirms user wishes to play
     """
-    print("\nWelcome Adventurer!\n"
-          "Ever since you were old enough to\n"
+    player_name = input("\nPlease enter your name: ")
+
+    print("\nPlease choose a class:")
+
+    player_classes = ["Archer", "Warrior", "Wizard"]
+    player_class = enquiries.choose("", player_classes)
+
+    player = Player(player_name, player_class)
+
+    print(f"\nWelcome {player_name}!\n"
+          "\nEver since you were old enough to\n"
           "listen to stories and play with toys\n"
           "you have wished to be an Adventurer.\n"
           "One of those brave and special souls\n"
@@ -121,14 +128,10 @@ def start():
           "and at present you are standing at the entrance,\n"
           "bracing yourself for what's to come.\n"
           "As a beginner job this should be easy, shouldn't it?\n"
-          "\nOnward Mighty Adventurer! \nTo Glory!\n"
+          f"\nOnward Mighty {player_class}! \nTo Glory!\n"
           "\nYou enter the dungeon\n")
-
-    player_name = input("Please enter your name: ")
-    player_class = input("Please choose a class:"
-                         "Warrior - Wizard - Archer")
-
-    player = 
+    
+    prompt_user()
 
 
 def prompt_user():
