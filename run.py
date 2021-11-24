@@ -4,7 +4,6 @@ import time
 
 import enquiries
 
-current_room = 0
 
 room_list = [
     {"description": "\nYou find your self in a large stone room,\n"
@@ -227,15 +226,19 @@ def prompt_user():
     player_choices = ["Continue", "Inspect", "Attack", "Interact", "Flee"]
     choice = enquiries.choose("", player_choices)
 
-    current_room = 1
+    current_room = 0
 
     if choice == "Continue":
-        time.sleep(1)
-        print("\nWhich direction would you like to go?")
-        direction_choices = room_list[current_room]["direction_choices"]
-        direction_choice = enquiries.choose("", direction_choices)
-        current_room = room_list[current_room]["direction_choices"]
-        run_game()
+        if room_list[current_room]["monster_presence"] == 0:
+            time.sleep(1)
+            print("\nWhich direction would you like to go?")
+            direction_choices = room_list[current_room]["direction_choices"]
+            direction_choice = enquiries.choose("", direction_choices)
+            current_room = room_list[current_room]["direction_choices"]
+            run_game()
+        else:
+            print("You must defeat the monster to proceed")
+            prompt_user()
     elif choice == "Inspect":
         inspect_room(current_room)
     elif choice == "Attack":
