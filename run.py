@@ -4,7 +4,7 @@ import time
 
 import enquiries
 
-room_id_list = [1, 2, 3, 4, 5, 6, 7, 8]
+current_room = 0
 
 room_list = [
     {"description": "\nYou find your self in a large stone room,\n"
@@ -72,7 +72,7 @@ room_list = [
     {"description": "none",
      "interaction": "none",
      "monster_presence": "0",
-     "direction_choices": ""},
+     "direction_choices": "none"},
     {"description": "\nYou are standing just inside the doorway,\n"
                     "at the end of what appears to be a stone bridge.\n"
                     "The room appears square,\n"
@@ -104,7 +104,7 @@ room_list = [
                     "and you find yourself back at the dungeon entrance...\n"
                     "You feel a strange sense of deja vu.",
      "monster_presence": "0",
-     "direction_choices": ""},
+     "direction_choices": "none"},
     {"description": "You are standing in a brightly lit circular room,\n"
                     "smaller than any so far.\n"
                     "To the right of the room, not visible from the hallway,\n"
@@ -116,9 +116,11 @@ room_list = [
                     "REST WEARY ADVENTURER AND TAKE A DRINK\n"
                     "FOR THE NEXT ROOM WILL PUSH YOU TO THE BRINK\n"
                     "****************************************\n",
-     "interaction": "",
+     "interaction": "room 7 interaction",
      "monster_presence": "0",
-     "direction_choices": ""},
+     "direction_choices": {
+         "forward": 8
+     }},
     {"description": "room 8",
      "interaction": "",
      "monster_presence": "1",
@@ -179,7 +181,10 @@ class Room():
         self.monster_presence = monster_presence
 
     def inspect_room(self):
-        print(room_list[0]["description"])
+        print(room_list[current_room]["description"])
+
+    def progress_room(self):
+        print(room_list[current_room]["progression"])
 
 
 def start():
@@ -210,8 +215,6 @@ def start():
           f"\nOnward Mighty {player_class}! \nTo Glory!\n"
           "\nYou enter the dungeon\n")
 
-    current_room = 0
-
     prompt_user()
 
 
@@ -224,17 +227,17 @@ def prompt_user():
     player_choices = ["Continue", "Inspect", "Attack", "Interact", "Flee"]
     choice = enquiries.choose("", player_choices)
 
+    current_room = 1
+
     if choice == "Continue":
-        if Room.room_id == 6:
-            time.sleep(1)
-            print("\nThe door is shut and there is no way out!\n"
-                  "Maybe try inspecting your surroundings...\n")
-            prompt_user()
-        else:
-            Room.room_id = Room.room_id + 1
-            run_game()
+        time.sleep(1)
+        print("\nWhich direction would you like to go?")
+        direction_choices = room_list[current_room]["direction_choices"]
+        direction_choice = enquiries.choose("", direction_choices)
+        current_room = room_list[current_room]["direction_choices"]
+        run_game()
     elif choice == "Inspect":
-        inspect_room()
+        inspect_room(current_room)
     elif choice == "Attack":
         run_battle()
     elif choice == "Interact":
@@ -348,7 +351,7 @@ def run_game():
         print("no")
 
 
-def inspect_room():
+def inspect_room(current_room):
     """
     When user selects 'Inspect' prints a brief description
     of the current room, then prompts the player once more.
@@ -357,22 +360,8 @@ def inspect_room():
     print("\nYou inspect your surroundings...\n")
 
     time.sleep(1)
-    if Room.room_id == 1:
-        print()
-        prompt_user()
-    elif Room.room_id == 2:
-        print()
-        prompt_user()
-    elif Room.room_id == 4:
-        print()
-        prompt_user()
-    elif Room.room_id == 6:
-        print()
-        prompt_user()
-    elif Room.room_id == 7:
-        print()
-    else:
-        prompt_user()
+    Room.inspect_room(room_list[current_room])
+    prompt_user()
 
 
 def run_battle():
@@ -409,35 +398,16 @@ def player_interact():
     """
     time.sleep(1)
     if Room.room_id == 1:
-        print("\nThere doesn't seem to be much to do in this room.\n"
-              "It appears to be the entrance chamber of this dungeon.\n"
-              "Maybe you should continue on?\n")
+        print()
         prompt_user()
     elif Room.room_id == 2:
-        print("\nThe only thing to possibly interact with\n"
-              "is the monster, which is staring at you\n"
-              "with what can only be described as violent intent.\n"
-              "Attacking would be a better bet\n")
+        print()
         prompt_user()
     elif Room.room_id == 4:
-        print("\nOnce again the only seemingly interactable objects\n"
-              "in this room are both animated and very agressive.\n"
-              "This is no place for pacifists unfortunately.\n")
+        print()
         prompt_user()
     elif Room.room_id == 6:
-        print("\nYou hesitantly approach the blue disc in front of you.\n"
-              "If it wasn't for the fact you are trapped in here,\n"
-              "you would be less than enthusiastic about interacting\n"
-              "with some strange, evidently magical, object.\n"
-              "As you get nearer the disc seems to\n"
-              "start exerting a pulling force on you.\n"
-              "The force drags you closer and closer,\n"
-              "until finally a wisp of your clothing\n"
-              "is touched by the swirling blue vapor.\n"
-              "There is a flash of light,\n"
-              "and a sound like a wind chime,\n"
-              "and you find yourself back at the dungeon entrance...\n"
-              "You feel a strange sense of deja vu")
+        print()
         Room.room_id = 1
         prompt_user()
 
