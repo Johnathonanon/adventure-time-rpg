@@ -16,7 +16,9 @@ room_list = [
                     "There are statues lined at even intervals,\n"
                     "standing like sentinels around the perimeter.\n"
                     "The only exit is directly in front of you.\n",
-     "player_interact": "",
+     "interaction": "\nThere doesn't seem to be much to do in this room.\n"
+                    "It appears to be the entrance chamber of this dungeon.\n"
+                    "Maybe you should continue on?\n",
      "monster_presence": "0",
      "direction_choices": {
          "forward": 2
@@ -32,16 +34,19 @@ room_list = [
                     "very ominous air coming from it. The right less so.\n"
                     "It seems apparent you won't be going anywhere\nwith"
                     " the monster blocking your way.\n",
-     "player_interact": "",
+     "interaction": "\nThe only thing to possibly interact with\n"
+                    "is the monster, which is staring at you\n"
+                    "with what can only be described as violent intent.\n"
+                    "Attacking would be a better bet\n",
      "monster_presence": "1",
      "direction_choices": {
          "forward": 3,
          "right": 4
      }},
     {"description": "none",
-     "player_interact": "",
+     "interaction": "none",
      "monster_presence": "0",
-     "direction_choices": ""},
+     "direction_choices": "none"},
     {"description": "\nYou find yourself at one end of a long narrow room.\n"
                     "It perfectly resembles the previous room,\n"
                     "except for the different dimenions.\n"
@@ -56,13 +61,16 @@ room_list = [
                     "Once again, the veins of light are present,\n"
                     "flowing towards the two enemies.\n"
                     "And once again neither looks particularly happy\n",
-     "player_interact": "",
+     "interaction": "\nOnce again the only seemingly interactable objects\n"
+                    "in this room are both animated and very agressive.\n"
+                    "This is no place for pacifists unfortunately.\n",
      "monster_presence": "1",
      "direction_choices": {
-         "left"
+         "left": 6,
+         "right": 5
      }},
     {"description": "none",
-     "player_interact": "",
+     "interaction": "none",
      "monster_presence": "0",
      "direction_choices": ""},
     {"description": "\nYou are standing just inside the doorway,\n"
@@ -81,7 +89,20 @@ room_list = [
                     "It's approximately twice your height,\n"
                     "and made of what looks like rolling magical vapor.\n"
                     "You feel the hairs rise on your arms as you approach.\n",
-     "player_interact": "",
+     "interaction": "\nYou hesitantly approach the"
+                    " blue disc in front of you.\n"
+                    "If it wasn't for the fact you are trapped in here,\n"
+                    "you would be less than enthusiastic about interacting\n"
+                    "with some strange, evidently magical, object.\n"
+                    "As you get nearer the disc seems to\n"
+                    "start exerting a pulling force on you.\n"
+                    "The force drags you closer and closer,\n"
+                    "until finally a wisp of your clothing\n"
+                    "is touched by the swirling blue vapor.\n"
+                    "There is a flash of light,\n"
+                    "and a sound like a wind chime,\n"
+                    "and you find yourself back at the dungeon entrance...\n"
+                    "You feel a strange sense of deja vu.",
      "monster_presence": "0",
      "direction_choices": ""},
     {"description": "You are standing in a brightly lit circular room,\n"
@@ -95,11 +116,11 @@ room_list = [
                     "REST WEARY ADVENTURER AND TAKE A DRINK\n"
                     "FOR THE NEXT ROOM WILL PUSH YOU TO THE BRINK\n"
                     "****************************************\n",
-     "player_interact": "",
+     "interaction": "",
      "monster_presence": "0",
      "direction_choices": ""},
     {"description": "room 8",
-     "player_interact": "",
+     "interaction": "",
      "monster_presence": "1",
      "direction_choices": ""}
 ]
@@ -337,73 +358,21 @@ def inspect_room():
 
     time.sleep(1)
     if Room.room_id == 1:
-        print("\nYou find your self in a large stone room,\n"
-              "3 times as wide as it is long.\n"
-              "It's dark, but there appears to be some sort\n"
-              "of ethereal light coming from the stone itself.\n"
-              "This place is old,\nthere's a thick layer of dust,\n"
-              "and the air is stale.\n"
-              "There are statues lined at even intervals,\n"
-              "standing like sentinels around the perimeter.\n"
-              "The only exit is directly in front of you.\n")
+        print()
         prompt_user()
     elif Room.room_id == 2:
-        print("\nYou are in a room roughly half the size of the first.\n"
-              "This room is the most brightly lit area so far.\n"
-              "It's made from the same stone as everywhere else,\n"
-              "except for what looks like narrow veins of pulsing"
-              " light\nflowing from the walls to the center of the room.\n"
-              "In the center stands a very unhappy looking monster.\n"
-              "There are two exits from the room,\none straight ahead\n"
-              "and one to the right.\nThe one straight ahead has an\n"
-              "extremely ominous air coming from it. The right less so.\n"
-              "It seems apparent you won't be going anywhere\nwith"
-              " the monster blocking your way.\n")
+        print()
         prompt_user()
     elif Room.room_id == 4:
-        print("\nYou find yourself at one end of a long narrow room.\n"
-              "It perfectly resembles the previous room,\n"
-              "except for the different dimenions.\n"
-              "Directly in front of you,\nroughly a quarter"
-              " the way down the long room,\nstands a monster.\n"
-              "And roughy halfway,\nin front of the first"
-              " visible exit,\nstands another.\n"
-              "The second exit from the room is"
-              " at the very end,\nin the right corner.\n"
-              "Similar to the last room, this door\n"
-              "emits an extremely ominous air.\n"
-              "Once again, the veins of light are present,\n"
-              "flowing towards the two enemies.\n"
-              "And once again neither looks particularly happy\n")
+        print()
         prompt_user()
     elif Room.room_id == 6:
-        print("\nYou are standing just inside the doorway,\n"
-              "at the end of what appears to be a stone bridge.\n"
-              "The room appears square,\n"
-              "and you have entered at one of the corners.\n"
-              "Glancing upwards, the room doesn't appear to have a ceiling,\n"
-              "just a darkness stretching infinitely to the heavens.\n"
-              "Similarly, peeking cautiously over the edge of the 'bridge'\n"
-              "shows a dark chasm reaching down into the bowels of the earth."
-              "At the end of the walkway is a platform.\n"
-              "And on that platfrom is a strange floating blue disc.\n"
-              "It's approximately twice your height,\n"
-              "and made of what looks like rolling magical vapor.\n"
-              "You feel the hairs rise on your arms as you approach.\n")
+        print()
         prompt_user()
     elif Room.room_id == 7:
-        print("You are standing in a brightly lit circular room,\n"
-              "smaller than any so far.\n"
-              "To the right of the room, not visible from the hallway,\n"
-              "is a small waterfall, flowing into a basin."
-              "There's a small wooden cup sitting on the side of the basin,\n"
-              "and a plaque that reads:\n"
-              "****************************************\n"
-              "REST WEARY ADVENTURER AND TAKE A DRINK\n"
-              "FOR THE NEXT ROOM WILL PUSH YOU TO THE BRINK\n"
-              "****************************************\n")
+        print()
     else:
-        print("You're")
+        prompt_user()
 
 
 def run_battle():
