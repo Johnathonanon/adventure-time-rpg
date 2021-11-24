@@ -180,9 +180,6 @@ class Room():
         self.room_id = room_id
         self.monster_presence = monster_presence
 
-    def inspect_room(self):
-        print(room_list[current_room]["description"])
-
 
 def start():
     """
@@ -232,8 +229,8 @@ def prompt_user():
             print("\nWhich direction would you like to go?")
             direction_choices = room_list[current_room]["direction_choices"]
             direction_choice = enquiries.choose("", direction_choices)
-            current_room = room_list[current_room]["direction_choices"]
-            run_game()
+            direction_choice = current_room
+            run_game(current_room)
         else:
             print("You must defeat the monster to proceed")
             prompt_user()
@@ -247,12 +244,13 @@ def prompt_user():
         abort_game()
 
 
-def run_game():
+def run_game(current_room):
     """
     Moves players through game while giving brief description
     """
     time.sleep(1)
     print(room_list[current_room]["progress_text"])
+    prompt_user()
 
 
 def inspect_room(current_room):
@@ -264,7 +262,7 @@ def inspect_room(current_room):
     print("\nYou inspect your surroundings...\n")
 
     time.sleep(1)
-    Room.inspect_room(room_list[current_room])
+    print(room_list[current_room]["description"])
     prompt_user()
 
 
