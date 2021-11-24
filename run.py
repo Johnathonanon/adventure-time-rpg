@@ -9,40 +9,40 @@ room_id_list = [1, 2, 3, 4, 5, 6, 7, 8]
 room_list = [
     {"description": "",
      "player_interact": "",
-     "monster_presence": "",
+     "monster_presence": "0",
      "abort_game": ""},
     {"description": "",
      "player_interact": "",
-     "monster_presence": "",
+     "monster_presence": "1",
      "abort_game": ""},
     {"description": "",
      "player_interact": "",
-     "monster_presence": "",
+     "monster_presence": "0",
      "abort_game": ""},
     {"run_game": "",
      "description": "",
      "player_interact": "",
-     "monster_presence": "",
+     "monster_presence": "1",
      "abort_game": ""},
     {"run_game": "",
      "description": "",
      "player_interact": "",
-     "monster_presence": "",
+     "monster_presence": "0",
      "abort_game": ""},
     {"run_game": "",
      "description": "",
      "player_interact": "",
-     "monster_presence": "",
+     "monster_presence": "0",
      "abort_game": ""},
     {"run_game": "",
      "description": "",
      "player_interact": "",
-     "monster_presence": "",
+     "monster_presence": "0",
      "abort_game": ""},
     {"run_game": "",
      "description": "",
      "player_interact": "",
-     "monster_presence": "",
+     "monster_presence": "1",
      "abort_game": ""}
 ]
 
@@ -53,44 +53,11 @@ class Player():
     Has methods for progressing through dungeon, exploring, interacting,
     fleeing and attacking
     """
-    def __init__(self, name, player_class, health_points, attack):
-        self.name = name
+    def __init__(self, player_name, player_class, health_points, attack):
+        self.player_name = player_name
         self.player_class = player_class
         self.health_points = health_points
         self.attack = attack
-
-    @classmethod
-    def build_player(cls):
-        """
-        Builds player character
-        """
-        name = input("Please enter your name: ")
-        classes = ['Warrior', 'Wizard', 'Archer']
-        player_class = enquiries.choose('\nPlease choose a class:\n', classes)
-
-        if player_class == 'Warrior':
-            health_points = random.randint(40, 50)
-            attack = random.randint(5, 10)
-        elif player_class == 'Wizard':
-            health_points = random.randint(20, 30)
-            attack = random.randint(15, 20)
-        else:
-            health_points = random.randint(30, 40)
-            attack = random.randint(10, 15)
-
-        print("\n****************************************")
-        print(
-            f"Welcome {name}!\n"
-            f"You are playing as the {player_class}\n"
-            f"Your HP is {health_points}\n"
-            f"You have an attack of {attack}")
-        print("****************************************\n")
-
-        Room.room_id = 1
-
-        player = cls(name, player_class, health_points, attack)
-
-        return player
 
 
 class Monster():
@@ -135,29 +102,33 @@ class Room():
         self.monster_presence = monster_presence
 
     def inspect_room(self):
-        print(command_list[0]["inspect_room"])
+        print(room_list[0]["inspect_room"])
 
 
 def start():
     """
     Starts game and confirms user wishes to play
     """
-    print("\nWelcome Adventurer!\n")
+    print("\nWelcome Adventurer!\n"
+          "Ever since you were old enough to\n"
+          "listen to stories and play with toys\n"
+          "you have wished to be an Adventurer.\n"
+          "One of those brave and special souls\n"
+          "who stand steadfast against the dangers of the world,\n"
+          "and make life better for all.\n"
+          "While also being handsomely rewarded of course.\n"
+          "You have taken your first job, a dungeon clearance,\n"
+          "and at present you are standing at the entrance,\n"
+          "bracing yourself for what's to come.\n"
+          "As a beginner job this should be easy, shouldn't it?\n"
+          "\nOnward Mighty Adventurer! \nTo Glory!\n"
+          "\nYou enter the dungeon\n")
 
-    while True:
+    player_name = input("Please enter your name: ")
+    player_class = input("Please choose a class:"
+                         "Warrior - Wizard - Archer")
 
-        start_prompt = input("\nAre you ready to begin? y/n :").lower()
-
-        if start_prompt == "y":
-            print("\nExcellent, Lets go!\n")
-            Player.build_player()
-            run_game()
-            return False
-        elif start_prompt == "n":
-            abort_game()
-            return False
-        else:
-            print("\nPlease enter either 'y' or 'n'")
+    player = 
 
 
 def prompt_user():
@@ -194,19 +165,6 @@ def run_game():
     """
     time.sleep(1)
     if Room.room_id == 1:
-        print("Ever since you were old enough to\n"
-              "listen to stories and play with toys\n"
-              "you have wished to be an Adventurer.\n"
-              "One of those brave and special souls\n"
-              "who stand steadfast against the dangers of the world,\n"
-              "and make life better for all.\n"
-              "While also being handsomely rewarded of course.\n"
-              "You have taken your first job, a dungeon clearance,\n"
-              "and at present you are standing at the entrance,\n"
-              "bracing yourself for what's to come.\n"
-              "As a beginner job this should be easy, shouldn't it?\n"
-              "\nOnward Mighty Adventurer! \nTo Glory!\n"
-              "\nYou enter the dungeon\n")
         prompt_user()
     elif Room.room_id == 2:
         prompt_user()
