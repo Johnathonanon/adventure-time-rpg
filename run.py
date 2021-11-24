@@ -7,43 +7,101 @@ import enquiries
 room_id_list = [1, 2, 3, 4, 5, 6, 7, 8]
 
 room_list = [
-    {"description": "",
+    {"description": "\nYou find your self in a large stone room,\n"
+                    "3 times as wide as it is long.\n"
+                    "It's dark, but there appears to be some sort\n"
+                    "of ethereal light coming from the stone itself.\n"
+                    "This place is old,\nthere's a thick layer of dust,\n"
+                    "and the air is stale.\n"
+                    "There are statues lined at even intervals,\n"
+                    "standing like sentinels around the perimeter.\n"
+                    "The only exit is directly in front of you.\n",
      "player_interact": "",
      "monster_presence": "0",
-     "abort_game": ""},
-    {"description": "",
+     "direction_choices": {
+         "forward": 2
+     }},
+    {"description": "\nYou are in a room roughly half the size of the first.\n"
+                    "This room is the most brightly lit area so far.\n"
+                    "It's made from the same stone as everywhere else,\n"
+                    "except for what resembles narrow veins of pulsing light\n"
+                    " flowing from the walls to the center of the room.\n"
+                    "In the center stands a very unhappy looking monster.\n"
+                    "There are two exits from the room,\none straight ahead\n"
+                    "and one to the right.\nThe one straight ahead has a\n"
+                    "very ominous air coming from it. The right less so.\n"
+                    "It seems apparent you won't be going anywhere\nwith"
+                    " the monster blocking your way.\n",
      "player_interact": "",
      "monster_presence": "1",
-     "abort_game": ""},
-    {"description": "",
+     "direction_choices": {
+         "forward": 3,
+         "right": 4
+     }},
+    {"description": "none",
      "player_interact": "",
      "monster_presence": "0",
-     "abort_game": ""},
-    {"run_game": "",
-     "description": "",
+     "direction_choices": ""},
+    {"description": "\nYou find yourself at one end of a long narrow room.\n"
+                    "It perfectly resembles the previous room,\n"
+                    "except for the different dimenions.\n"
+                    "Directly in front of you,\nroughly a quarter"
+                    " the way down the long room,\nstands a monster.\n"
+                    "And roughy halfway,\nin front of the first"
+                    " visible exit,\nstands another.\n"
+                    "The second exit from the room is"
+                    " at the very end,\nin the right corner.\n"
+                    "Similar to the last room, this door\n"
+                    "emits an extremely ominous air.\n"
+                    "Once again, the veins of light are present,\n"
+                    "flowing towards the two enemies.\n"
+                    "And once again neither looks particularly happy\n",
      "player_interact": "",
      "monster_presence": "1",
-     "abort_game": ""},
-    {"run_game": "",
-     "description": "",
+     "direction_choices": {
+         "left"
+     }},
+    {"description": "none",
      "player_interact": "",
      "monster_presence": "0",
-     "abort_game": ""},
-    {"run_game": "",
-     "description": "",
+     "direction_choices": ""},
+    {"description": "\nYou are standing just inside the doorway,\n"
+                    "at the end of what appears to be a stone bridge.\n"
+                    "The room appears square,\n"
+                    "and you have entered at one of the corners.\n"
+                    "Glancing upwards, the room doesn't"
+                    " appear to have a ceiling,\n"
+                    "just a darkness stretching infinitely to the heavens.\n"
+                    "Similarly, peeking cautiously over"
+                    " the edge of the 'bridge'\n"
+                    "shows a dark chasm reaching down"
+                    " into the bowels of the earth."
+                    "At the end of the walkway is a platform.\n"
+                    "And on that platfrom is a strange floating blue disc.\n"
+                    "It's approximately twice your height,\n"
+                    "and made of what looks like rolling magical vapor.\n"
+                    "You feel the hairs rise on your arms as you approach.\n",
      "player_interact": "",
      "monster_presence": "0",
-     "abort_game": ""},
-    {"run_game": "",
-     "description": "",
+     "direction_choices": ""},
+    {"description": "You are standing in a brightly lit circular room,\n"
+                    "smaller than any so far.\n"
+                    "To the right of the room, not visible from the hallway,\n"
+                    "is a small waterfall, flowing into a basin."
+                    "There's a small wooden cup"
+                    " sitting on the side of the basin,\n"
+                    "and a plaque that reads:\n"
+                    "****************************************\n"
+                    "REST WEARY ADVENTURER AND TAKE A DRINK\n"
+                    "FOR THE NEXT ROOM WILL PUSH YOU TO THE BRINK\n"
+                    "****************************************\n",
      "player_interact": "",
      "monster_presence": "0",
-     "abort_game": ""},
-    {"run_game": "",
-     "description": "",
+     "direction_choices": ""},
+    {"description": "room 8",
      "player_interact": "",
      "monster_presence": "1",
-     "abort_game": ""}
+     "direction_choices": ""}
 ]
 
 
@@ -100,7 +158,7 @@ class Room():
         self.monster_presence = monster_presence
 
     def inspect_room(self):
-        print(room_list[0]["inspect_room"])
+        print(room_list[0]["description"])
 
 
 def start():
@@ -130,7 +188,9 @@ def start():
           "As a beginner job this should be easy, shouldn't it?\n"
           f"\nOnward Mighty {player_class}! \nTo Glory!\n"
           "\nYou enter the dungeon\n")
-    
+
+    current_room = 0
+
     prompt_user()
 
 
