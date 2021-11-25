@@ -6,7 +6,25 @@ import enquiries
 
 
 room_list = [
-    {"progress_text": "bla",
+    {"progress_text": "\nYou continue forward"
+                      " through the only visible doorway,\n"
+                      "and find yourself in a long stone corridor.\n"
+                      "The corridor also gives off a dull ambient light,\n"
+                      "evidently magical in nature,\n"
+                      "which is just barely enough to see by.\n"
+                      "It's obviously very old,"
+                      " with years of accumulated dust,\n"
+                      "and cobwebs hanging from ceilings and corners.\n"
+                      "You come to a left turn in the passage"
+                      " and continue on,\n"
+                      "as it's the only way to go.\n"
+                      "Ahead you can see a doorway into a room\n"
+                      "far brighter than the hallway you're presently in.\n"
+                      "There seems to be the shadow of...\n"
+                      "something...\nmoving around in there.\n"
+                      "A frisson of nerves runs through you\n"
+                      "but you steel yourself and move forward.\n"
+                      "\nYou enter the room\n",
      "description": "\nYou find your self in a large stone room,\n"
                     "3 times as wide as it is long.\n"
                     "It's dark, but there appears to be some sort\n"
@@ -226,11 +244,13 @@ def prompt_user():
     if choice == "Continue":
         if room_list[current_room]["monster_presence"] == 0:
             time.sleep(1)
-            print("\nWhich direction would you like to go?")
+            print("You can go :")
+            print(room_list[current_room]["direction_choices"].keys())
+            input("\nWhich direction would you like to go? >")
             direction_choices = room_list[current_room]["direction_choices"]
-            direction_choice = enquiries.choose("", direction_choices)
-            direction_choice = current_room
-            run_game(current_room)
+            direction_choice = enquiries.choose("", direction_choices).get()
+            current_room = direction_choice
+            print(current_room)
         else:
             print("You must defeat the monster to proceed")
             prompt_user()
@@ -294,24 +314,12 @@ def run_battle():
         prompt_user()
 
 
-def player_interact():
+def player_interact(current_room):
     """
     Allows player to interact with environment when possible to do so
     """
     time.sleep(1)
-    if Room.room_id == 1:
-        print()
-        prompt_user()
-    elif Room.room_id == 2:
-        print()
-        prompt_user()
-    elif Room.room_id == 4:
-        print()
-        prompt_user()
-    elif Room.room_id == 6:
-        print()
-        Room.room_id = 1
-        prompt_user()
+    print(room_list[current_room]["interaction"])
 
 
 def abort_game():
