@@ -49,9 +49,7 @@ room_list = [
                     "In the center stands a very unhappy looking monster.\n"
                     "There are two exits from the room,\none straight ahead\n"
                     "and one to the right.\nThe one straight ahead has a\n"
-                    "very ominous air coming from it. The right less so.\n"
-                    "It seems apparent you won't be going anywhere\nwith"
-                    " the monster blocking your way.\n",
+                    "very ominous air coming from it. The right less so.\n",
      "interaction": "\nThe only thing to possibly interact with\n"
                     "is the monster, which is staring at you\n"
                     "with what can only be described as violent intent.\n"
@@ -196,7 +194,7 @@ room_list = [
                     "Similarly, peeking cautiously over"
                     " the edge of the 'bridge'\n"
                     "shows a dark chasm reaching down"
-                    " into the bowels of the earth."
+                    " into the bowels of the earth.\n"
                     "At the end of the walkway is a platform.\n"
                     "And on that platfrom is a strange floating blue disc.\n"
                     "It's approximately twice your height,\n"
@@ -344,7 +342,12 @@ def prompt_user(current_room, player):
     choice = enquiries.choose("", player_choices)
 
     if choice == "Continue":
-        if room_list[current_room]["monster_presence"] == 0:
+        if current_room == 6:
+            print("\nThe way back is sealed\n"
+                  "and the room has no other exit.\n"
+                  "Perhaps a risk must be taken...")
+            prompt_user(current_room, player)
+        elif room_list[current_room]["monster_presence"] == 0:
             time.sleep(1)
             direction = enquiries.choose(
                 "Which way will you go?",
@@ -461,9 +464,14 @@ def player_interact(current_room, player):
     """
     Allows player to interact with environment when possible to do so
     """
-    time.sleep(1)
-    print(room_list[current_room]["interaction"])
-    prompt_user(current_room, player)
+    if current_room == 6:
+        print(room_list[current_room]["interaction"])
+        current_room = 0
+        prompt_user(current_room, player)
+    else:
+        time.sleep(1)
+        print(room_list[current_room]["interaction"])
+        prompt_user(current_room, player)
 
 
 def abort_game():
