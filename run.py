@@ -117,7 +117,7 @@ room_list = [
          "left": 5,
          "right": 4
      }},
-    {"progress_text": "Despite your misgivings, you decide to take\n"
+    {"progress_text": "\nDespite your misgivings, you decide to take\n"
                       "the doorway in the far right corner of the room.\n"
                       "It enters into a dark passageway,\n"
                       "the end of which cannot be seen.\n"
@@ -139,17 +139,17 @@ room_list = [
      "interaction": "none",
      "monster_presence": 0,
      "direction_choices": "none"},
-    {"progress_text" "\nYou exit through the left hand door,\n"
-                     "and enter another long dimly lit corridor.\n"
-                     "After a few minutes of walking\n"
-                     "you find yourself at a junction.\n"
-                     "The left path continues to what appears\n"
-                     "to be a blank wall in the distance,\n"
-                     "however, that way gives you a sense of excitement.\n"
-                     "The right stretches farther than you can see,\n"
-                     "but you can barely make out a blue-ish glow\n"
-                     "right at the end of the path.\n"
-                     "This way gives you a feeling of home.\n"
+    {"progress_text": "\nYou exit through the left hand door,\n"
+                      "and enter another long dimly lit corridor.\n"
+                      "After a few minutes of walking\n"
+                      "you find yourself at a junction.\n"
+                      "The left path continues to what appears\n"
+                      "to be a blank wall in the distance,\n"
+                      "however, that way gives you a sense of excitement.\n"
+                      "The right stretches farther than you can see,\n"
+                      "but you can barely make out a blue-ish glow\n"
+                      "right at the end of the path.\n"
+                      "This way gives you a feeling of home.\n",
      "description": "\nYou find yourself at a junction.\n"
                     "The left path continues to what appears\n"
                     "to be a blank wall in the distance,\n"
