@@ -211,6 +211,8 @@ def start():
 
     player = Player(player_name, player_class, health_points, attack)
 
+    current_room = 0
+
     print(f"\nWelcome {player_name}!\n"
           "\nEver since you were old enough to\n"
           "listen to stories and play with toys\n"
@@ -226,10 +228,10 @@ def start():
           f"\nOnward Mighty {player_class}! \nTo Glory!\n"
           "\nYou enter the dungeon\n")
 
-    prompt_user(player)
+    prompt_user(current_room, player)
 
 
-def prompt_user(player):
+def prompt_user(current_room, player):
     """
     Prompts user to select a command and progresses game
     """
@@ -237,8 +239,6 @@ def prompt_user(player):
 
     player_choices = ["Continue", "Inspect", "Attack", "Interact", "Flee"]
     choice = enquiries.choose("", player_choices)
-
-    current_room = 0
 
     if choice == "Continue":
         if room_list[current_room]["monster_presence"] == 0:
@@ -248,10 +248,10 @@ def prompt_user(player):
                 room_list[current_room]["direction_choices"])
             current_room = room_list[current_room].get(
                 "direction_choices").get(direction)
-            print(current_room)
+            run_game(current_room, player)
         else:
             print("You must defeat the monster(s) to proceed")
-            prompt_user(player)
+            prompt_user(current_room, player)
     elif choice == "Inspect":
         inspect_room(current_room, player)
     elif choice == "Attack":
@@ -268,7 +268,7 @@ def run_game(current_room, player):
     """
     time.sleep(1)
     print(room_list[current_room]["progress_text"])
-    prompt_user(player)
+    prompt_user(current_room, player)
 
 
 def inspect_room(current_room, player):
@@ -281,7 +281,7 @@ def inspect_room(current_room, player):
 
     time.sleep(1)
     print(room_list[current_room]["description"])
-    prompt_user(player)
+    prompt_user(current_room, player)
 
 
 def run_battle(current_room, player):
@@ -318,12 +318,12 @@ def run_battle(current_room, player):
                 print(f"You defeated the {monster.monster_class}!"
                       f"Congratulations {player.player_name}!")
                 room_list[current_room]["monster_presence"] -= 1
-                prompt_user(player)
+                prompt_user(current_room, player)
     else:
         print("\nI know you're eager Adventurer...\n"
               "but there's nothing to fight...\n"
               "except perhaps your own inner demons?")
-        prompt_user(player)
+        prompt_user(current_room, player)
 
 
 def player_interact(current_room, player):
@@ -332,7 +332,7 @@ def player_interact(current_room, player):
     """
     time.sleep(1)
     print(room_list[current_room]["interaction"])
-    prompt_user(player)
+    prompt_user(current_room, player)
 
 
 def abort_game():
