@@ -311,7 +311,12 @@ def start():
 
     current_room = 0
 
-    print(f"\nWelcome {player_name}!\n"
+    print("\n****************************************"
+          f"\nWelcome {player_name}!\n"
+          f"You are play as a {player_class}\n"
+          f"Your Attack power is {player.attack}\n"
+          f"And you have {player.health_points} Health Points\n"
+          "****************************************\n"
           "\nEver since you were old enough to\n"
           "listen to stories and play with toys\n"
           "you have wished to be an Adventurer.\n"
@@ -410,6 +415,8 @@ def run_battle(current_room, player):
 
         print(f"\nYou are fighting a {monster.monster_class}!")
 
+        full_hp = player.health_points
+
         while monster.health_points > 0 and player.health_points > 0:
 
             attack_modifier = random.uniform(0.8, 1.2)
@@ -419,20 +426,33 @@ def run_battle(current_room, player):
             print(f"\nThe {monster.monster_class} attacks"
                   f" for {monster_roll} points of damage!")
             player.health_points = player.health_points - monster_roll
+            print(f"\nYou have {player.health_points} HP left\n")
             print(f"\n{player.player_name} attacks for"
                   f" {player_roll} points of damage")
             monster.health_points = monster.health_points - player_roll
+            print(f"\nThe {monster.monster_class} has"
+                  f" {monster.health_points} HP left\n")
         else:
             if player.health_points <= 0:
-                print("Oh no..."
-                      "You died..."
-                      "That was highly unexpected."
-                      "But then again everyone gets unlucky.")
+                print("Oh no...\n"
+                      "You died...\n"
+                      "That was highly unexpected.\n"
+                      "But then again everyone gets unlucky.\n")
                 abort_game()
             else:
                 print(f"\nYou defeated the {monster.monster_class}!"
                       f"\nCongratulations {player.player_name}!")
+
+                print("\nWhew...\n"
+                      "That was tough.\n"
+                      "But you came prepared!\n"
+                      "You chug a health potion,\n"
+                      "and feel 100% again!")
+
+                player.health_points = full_hp
+
                 print(player.health_points)
+
                 room_list[current_room]["monster_presence"] -= 1
                 prompt_user(current_room, player)
 
