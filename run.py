@@ -6,6 +6,22 @@ import enquiries
 
 
 room_list = [
+    {"description": "\nYou find your self in a large stone room,\n"
+                    "3 times as wide as it is long.\n"
+                    "It's dark, but there appears to be some sort\n"
+                    "of ethereal light coming from the stone itself.\n"
+                    "This place is old,\nthere's a thick layer of dust,\n"
+                    "and the air is stale.\n"
+                    "There are statues lined at even intervals,\n"
+                    "standing like sentinels around the perimeter.\n"
+                    "The only exit is directly in front of you.\n",
+     "interaction": "\nThere doesn't seem to be much to do in this room.\n"
+                    "It appears to be the entrance chamber of this dungeon.\n"
+                    "Maybe you should continue on?\n",
+     "monster_presence": 0,
+     "direction_choices": {
+         "forward": 2
+     }},
     {"progress_text": "\nYou continue forward"
                       " through the only visible doorway,\n"
                       "and find yourself in a long stone corridor.\n"
@@ -25,23 +41,7 @@ room_list = [
                       "A frisson of nerves runs through you\n"
                       "but you steel yourself and move forward.\n"
                       "\nYou enter the room\n",
-     "description": "\nYou find your self in a large stone room,\n"
-                    "3 times as wide as it is long.\n"
-                    "It's dark, but there appears to be some sort\n"
-                    "of ethereal light coming from the stone itself.\n"
-                    "This place is old,\nthere's a thick layer of dust,\n"
-                    "and the air is stale.\n"
-                    "There are statues lined at even intervals,\n"
-                    "standing like sentinels around the perimeter.\n"
-                    "The only exit is directly in front of you.\n",
-     "interaction": "\nThere doesn't seem to be much to do in this room.\n"
-                    "It appears to be the entrance chamber of this dungeon.\n"
-                    "Maybe you should continue on?\n",
-     "monster_presence": 0,
-     "direction_choices": {
-         "forward": 2
-     }},
-    {"description": "\nYou are in a room roughly half the size of the first.\n"
+     "description": "\nYou are in a room roughly half the size of the first.\n"
                     "This room is the most brightly lit area so far.\n"
                     "It's made from the same stone as everywhere else,\n"
                     "except for what resembles narrow veins of pulsing light\n"
@@ -243,12 +243,11 @@ def prompt_user(player):
     if choice == "Continue":
         if room_list[current_room]["monster_presence"] == 0:
             time.sleep(1)
-            print("You can go :")
-            print(str(room_list[current_room]["direction_choices"].keys()))
-            input("\nWhich direction would you like to go? >")
-            direction_choices = room_list[current_room]["direction_choices"]
-            direction_choice = enquiries.choose("", direction_choices).get()
-            current_room = direction_choice
+            direction = enquiries.choose(
+                "Which way will you go?",
+                room_list[current_room]["direction_choices"])
+            current_room = room_list[current_room].get(
+                "direction_choices").get(direction)
             print(current_room)
         else:
             print("You must defeat the monster(s) to proceed")
@@ -319,6 +318,7 @@ def run_battle(current_room, player):
                 print(f"You defeated the {monster.monster_class}!"
                       f"Congratulations {player.player_name}!")
                 room_list[current_room]["monster_presence"] -= 1
+                prompt_user(player)
     else:
         print("\nI know you're eager Adventurer...\n"
               "but there's nothing to fight...\n"
