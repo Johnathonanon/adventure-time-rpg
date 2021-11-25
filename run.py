@@ -217,14 +217,14 @@ def start():
           f"\nOnward Mighty {player_class}! \nTo Glory!\n"
           "\nYou enter the dungeon\n")
 
-    prompt_user()
+    prompt_user(player)
 
 
-def prompt_user():
+def prompt_user(player):
     """
     Prompts user to select a command and progresses game
     """
-    print("\nWhat would you like to do?")
+    print(f"\nWhat would you like to do {player.player_name}?")
 
     player_choices = ["Continue", "Inspect", "Attack", "Interact", "Flee"]
     choice = enquiries.choose("", player_choices)
@@ -243,27 +243,27 @@ def prompt_user():
             print(current_room)
         else:
             print("You must defeat the monster to proceed")
-            prompt_user()
+            prompt_user(player)
     elif choice == "Inspect":
-        inspect_room(current_room)
+        inspect_room(current_room, player)
     elif choice == "Attack":
-        run_battle()
+        run_battle(current_room, player)
     elif choice == "Interact":
-        player_interact(current_room)
+        player_interact(current_room, player)
     else:
         abort_game()
 
 
-def run_game(current_room):
+def run_game(current_room, player):
     """
     Moves players through game while giving brief description
     """
     time.sleep(1)
     print(room_list[current_room]["progress_text"])
-    prompt_user()
+    prompt_user(player)
 
 
-def inspect_room(current_room):
+def inspect_room(current_room, player):
     """
     When user selects 'Inspect' prints a brief description
     of the current room, then prompts the player once more.
@@ -273,26 +273,28 @@ def inspect_room(current_room):
 
     time.sleep(1)
     print(room_list[current_room]["description"])
-    prompt_user()
+    prompt_user(player)
 
 
-def run_battle():
+def run_battle(current_room, player):
     """
     When user selects 'Attack' option, initiates a 'battle' between
     player and monster.
     """
     time.sleep(1)
+    print(player)
     if current_room == 1:
-        monster = Monster("Skeleton", 30, 5)
+        monster = Monster("Skeleton", 40, 5)
 
 
-def player_interact(current_room):
+
+def player_interact(current_room, player):
     """
     Allows player to interact with environment when possible to do so
     """
     time.sleep(1)
     print(room_list[current_room]["interaction"])
-    prompt_user()
+    prompt_user(player)
 
 
 def abort_game():
