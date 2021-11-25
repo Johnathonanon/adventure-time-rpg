@@ -152,9 +152,11 @@ class Player():
     Has methods for progressing through dungeon, exploring, interacting,
     fleeing and attacking
     """
-    def __init__(self, player_name, player_class):
+    def __init__(self, player_name, player_class, health_points, attack):
         self.player_name = player_name
         self.player_class = player_class
+        self.health_points = health_points
+        self.attack = attack
 
 
 class Monster():
@@ -188,7 +190,17 @@ def start():
     player_classes = ["Archer", "Warrior", "Wizard"]
     player_class = enquiries.choose("", player_classes)
 
-    player = Player(player_name, player_class)
+    if player_class == 'Warrior':
+        health_points = random.randint(40, 50)
+        attack = random.randint(5, 10)
+    elif player_class == 'Wizard':
+        health_points = random.randint(20, 30)
+        attack = random.randint(15, 20)
+    else:
+        health_points = random.randint(30, 40)
+        attack = random.randint(10, 15)
+
+    player = Player(player_name, player_class, health_points, attack)
 
     print(f"\nWelcome {player_name}!\n"
           "\nEver since you were old enough to\n"
