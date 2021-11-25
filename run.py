@@ -166,28 +166,6 @@ class Monster():
         self.health_points = health_points
         self.attack = attack
 
-    @classmethod
-    def build_monster(cls):
-        """
-        Creates monster instance. One of 3 random classes.
-        Sets HP and attack based on monster_class.
-        """
-        monster_classes = ['Skeleton', 'Zombie', 'Goblin']
-
-        monster_class = random.choice(monster_classes)
-
-        if monster_class == 'Zombie':
-            health_points = random.randint(40, 50)
-            attack = random.randint(5, 10)
-        elif monster_class == 'Skeleton':
-            health_points = random.randint(20, 30)
-            attack = random.randint(15, 20)
-        else:
-            health_points = random.randint(30, 40)
-            attack = random.randint(10, 15)
-
-        return cls(monster_class, health_points, attack)
-
 
 class Room():
     """
@@ -245,7 +223,7 @@ def prompt_user():
         if room_list[current_room]["monster_presence"] == 0:
             time.sleep(1)
             print("You can go :")
-            print(room_list[current_room]["direction_choices"].keys())
+            print(str(room_list[current_room]["direction_choices"].keys()))
             input("\nWhich direction would you like to go? >")
             direction_choices = room_list[current_room]["direction_choices"]
             direction_choice = enquiries.choose("", direction_choices).get()
@@ -288,7 +266,7 @@ def inspect_room(current_room):
 
 def run_battle():
     """
-    When user selects 'Attack' option, initiates a battle between
+    When user selects 'Attack' option, initiates a 'battle' between
     player and monster.
     """
     time.sleep(1)
@@ -320,6 +298,7 @@ def player_interact(current_room):
     """
     time.sleep(1)
     print(room_list[current_room]["interaction"])
+    prompt_user()
 
 
 def abort_game():
