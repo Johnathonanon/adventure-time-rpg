@@ -139,7 +139,54 @@ room_list = [
      "interaction": "none",
      "monster_presence": 0,
      "direction_choices": "none"},
-    {"description": "\nYou are standing just inside the doorway,\n"
+    {"progress_text" "\nYou exit through the left hand door,\n"
+                     "and enter another long dimly lit corridor.\n"
+                     "After a few minutes of walking\n"
+                     "you find yourself at a junction.\n"
+                     "The left path continues to what appears\n"
+                     "to be a blank wall in the distance,\n"
+                     "however, that way gives you a sense of excitement.\n"
+                     "The right stretches farther than you can see,\n"
+                     "but you can barely make out a blue-ish glow\n"
+                     "right at the end of the path.\n"
+                     "This way gives you a feeling of home.\n"
+     "description": "\nYou find yourself at a junction.\n"
+                    "The left path continues to what appears\n"
+                    "to be a blank wall in the distance,\n"
+                    "however, that way gives you a sense of excitement.\n"
+                    "The right stretches farther than you can see,\n"
+                    "but you can barely make out a blue-ish glow\n"
+                    "right at the end of the path.\n"
+                    "This way gives you a feeling of home.\n",
+     "interaction": "\nYou find yourself at a junction.\n"
+                    "The left path continues to what appears\n"
+                    "to be a blank wall in the distance,\n"
+                    "however, that way gives you a sense of excitement.\n"
+                    "The right stretches farther than you can see,\n"
+                    "but you can barely make out a blue-ish glow\n"
+                    "right at the end of the path.\n"
+                    "This way gives you a feeling of home.\n",
+     "monster_presence": 0,
+     "monster_class": "Ogre",
+     "direction_choices": {
+         "left": 7,
+         "right": 6
+     }},
+    {"progress_text": "\nYou decide to take the right branch,"
+                      "and slowly but surely you can see\n"
+                      "the blue glow in the distance is getting brighter.\n"
+                      "As you get closer the air seems to crackle,\n"
+                      "and your hair begins to stand slightly on end.\n"
+                      "Eventually you reach the entrance to the next room,\n"
+                      "just to find that there is a haze\n"
+                      "blocking your view of the room beyond.\n"
+                      "It feels like you are looking through frosted glass,\n"
+                      "with little visible except that blue glow.\n"
+                      "Your curiosity trumps your hesitation,\n"
+                      "and you step forward through the haze.\n"
+                      "As you do, the haze solidifies,\n"
+                      "and you realise you will not be returning that way.\n",
+     "description": "\nYou are standing just inside the doorway,\n"
                     "at the end of what appears to be a stone bridge.\n"
                     "The room appears square,\n"
                     "and you have entered at one of the corners.\n"
@@ -171,7 +218,15 @@ room_list = [
                     "You feel a strange sense of deja vu.",
      "monster_presence": 0,
      "direction_choices": "none"},
-    {"description": "You are standing in a brightly lit circular room,\n"
+    {"progress_text": "\nYou decide to take the left path,\n"
+                      "and eventually you come to a right corner,\n"
+                      "around which you can feel a very slight breeze.\n"
+                      "You continue onwards and approach the next room,\n"
+                      "the light of which is shining brightly.\n"
+                      "Before you enter you scan the room for threats\n"
+                      "but see nothing...\n"
+                      "You cautiously enter...\n",
+     "description": "You are standing in a brightly lit circular room,\n"
                     "smaller than any so far.\n"
                     "To the right of the room, not visible from the hallway,\n"
                     "is a small waterfall, flowing into a basin."
@@ -182,12 +237,16 @@ room_list = [
                     "REST WEARY ADVENTURER AND TAKE A DRINK\n"
                     "FOR THE NEXT ROOM WILL PUSH YOU TO THE BRINK\n"
                     "****************************************\n",
-     "interaction": "room 7 interaction",
+     "interaction": "\nYou drink a cup of water from the fountain.\n"
+                    "It's cool and refreshing and\n"
+                    " you feel yourself revitalised.\n"
+                    "Good thing it's not poison or somethings.",
      "monster_presence": 0,
      "direction_choices": {
          "forward": 7
      }},
-    {"description": "room 8",
+    {"progress_text": "You ",
+     "description": "room 8",
      "interaction": "",
      "monster_presence": 1,
      "monster_class": "Ogre",
