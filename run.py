@@ -280,7 +280,8 @@ def prompt_user(current_room, player):
 
 def run_game(current_room, player):
     """
-    Moves players through game while giving brief description
+    Moves players through game while giving brief description,
+    then prompts for each 'room'
     """
     time.sleep(1)
     print(room_list[current_room]["progress_text"])
@@ -312,7 +313,6 @@ def run_battle(current_room, player):
             room_list[current_room]["monster_class"],
             room_list[current_room]["monster_hp"],
             room_list[current_room]["monster_attack"])
-        return monster
 
     if room_list[current_room]["monster_presence"] == 0:
 
@@ -324,13 +324,18 @@ def run_battle(current_room, player):
 
         print(f"\nYou are fighting a {monster.monster_class}!")
 
-        attack_modifier = random.uniform(0.8, 1.2)
-
         while monster.health_points > 0 or player.health_points > 0:
-            print(f"The {monster.monster_class} attacks"
-                  f"for {monster.attack * attack_modifier} points of damage!"
-                  f"{player.player_name} attacks for"
-                  f"{player.attack * attack_modifier} points of damage")
+
+            attack_modifier = random.uniform(0.8, 1.2)
+            monster_roll = round(monster.attack * attack_modifier)
+            player_roll = round(player.attack * attack_modifier)
+
+            print(f"\nThe {monster.monster_class} attacks"
+                  f" for {monster_roll} points of damage!")
+            player.health_points = player.health_points - monster_roll
+            print(f"\n{player.player_name} attacks for"
+                  f" {player_roll} points of damage")
+            monster.health_points = monster.health_points - player_roll
         else:
             if player.health_points == 0:
                 print("Oh no..."
