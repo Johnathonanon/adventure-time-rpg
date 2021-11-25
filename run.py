@@ -369,8 +369,12 @@ def run_game(current_room, player):
     then prompts for each 'room'
     """
     time.sleep(1)
-    print(room_list[current_room]["progress_text"])
-    prompt_user(current_room, player)
+    if current_room == 2 or 5:
+        print(room_list[current_room]["progress_text"])
+        abort_game()
+    else:
+        print(room_list[current_room]["progress_text"])
+        prompt_user(current_room, player)
 
 
 def inspect_room(current_room, player):
