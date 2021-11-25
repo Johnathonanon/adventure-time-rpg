@@ -282,10 +282,33 @@ def run_battle(current_room, player):
     player and monster.
     """
     time.sleep(1)
-    print(player)
     if current_room == 1:
         monster = Monster("Skeleton", 40, 5)
+    elif current_room == 3:
+        monster = Monster("Zombie", 50, 10)
+    else:
+        monster = Monster("Ogre", 70, 15)
 
+    print(f"\nYou are fighting a {monster.monster_class}!")
+
+    attack_modifier = random.random(0.8, 1.2)
+
+    while monster.health_points > 0 or player.health_points > 0:
+        print(f"The {monster.monster_class} attacks"
+              f"for {monster.attack * attack_modifier} points of damage!"
+              f"{player.player_name} attacks for"
+              f"{player.attack * attack_modifier} points of damage")
+    else:
+        if player.health_points == 0:
+            print("Oh no..."
+                  "You died..."
+                  "That was highly unexpected."
+                  "But then again everyone gets unlucky.")
+            abort_game()
+        else:
+            print(f"You defeated the {monster.monster_class}!"
+                  f"Congratulations {player.player_name}!")
+            room_list[current_room]["monster_presence"] -= 1
 
 
 def player_interact(current_room, player):
