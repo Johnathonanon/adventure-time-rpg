@@ -259,7 +259,7 @@ def prompt_user():
     elif choice == "Attack":
         run_battle()
     elif choice == "Interact":
-        player_interact()
+        player_interact(current_room)
     else:
         abort_game()
 
