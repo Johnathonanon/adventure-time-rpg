@@ -191,14 +191,14 @@ def start():
     player_class = enquiries.choose("", player_classes)
 
     if player_class == 'Warrior':
-        health_points = random.randint(40, 50)
-        attack = random.randint(5, 10)
-    elif player_class == 'Wizard':
-        health_points = random.randint(20, 30)
-        attack = random.randint(15, 20)
-    else:
-        health_points = random.randint(30, 40)
+        health_points = random.randint(90, 100)
         attack = random.randint(10, 15)
+    elif player_class == 'Wizard':
+        health_points = random.randint(70, 80)
+        attack = random.randint(20, 25)
+    else:
+        health_points = random.randint(80, 90)
+        attack = random.randint(15, 20)
 
     player = Player(player_name, player_class, health_points, attack)
 
@@ -282,26 +282,8 @@ def run_battle():
     player and monster.
     """
     time.sleep(1)
-    if Room.room_id == 2:
-        monster1 = Monster.build_monster()
-        print(f"You attack the {monster1.monster_class}")
-        print(f"The {monster1.monster_class} is hurt")
-        print(f"The {monster1.monster_class} is dead")
-        prompt_user()
-    elif Room.room_id == 4:
-        monster2 = Monster.build_monster()
-        monster3 = Monster.build_monster()
-        print(f"\nYou are attacked by {monster2.monster_class}"
-              f" and {monster3.monster_class}")
-        prompt_user()
-    elif Room.room_id == 8:
-        print("boss fight")
-        prompt_user()
-    else:
-        print("\nI know you're eager Adventurer...\n"
-              "but there's nothing to fight...\n"
-              "except perhaps your own inner demons?")
-        prompt_user()
+    if current_room == 1:
+        monster = Monster("Skeleton", 30, 5)
 
 
 def player_interact(current_room):
