@@ -117,7 +117,25 @@ room_list = [
          "left": 5,
          "right": 4
      }},
-    {"description": "none",
+    {"progress_text": "Despite your misgivings, you decide to take\n"
+                      "the doorway in the far right corner of the room.\n"
+                      "It enters into a dark passageway,\n"
+                      "the end of which cannot be seen.\n"
+                      "As you cautiously shuffle forward in the dark,\n"
+                      "you eventually reach a right turn in the tunnel,\n"
+                      "and as you proceed on\n"
+                      "you feel like you can hear a deep rumbling.\n"
+                      "You continue forward and eventually\n"
+                      "you can tell you have entered another room.\n"
+                      "You can barely make out the fact that it appears\n"
+                      "cylindrical, and the rumbling has gotten louder."
+                      "Just as you're about to retreat,\n"
+                      "a door slams shut behind you,\n"
+                      "and with a deafening grating noise\n"
+                      "the floor gives way beneath you.\n"
+                      "Your last thought is\n"
+                      "regret you didn't make it further.",
+     "description": "none",
      "interaction": "none",
      "monster_presence": 0,
      "direction_choices": "none"},
@@ -371,7 +389,9 @@ def abort_game():
     """
     Aborts game on user prompt
     """
-    print("\nWell that's a pity :( Bye Bye")
+    print("\nWell that's a pity :( Bye Bye"
+          "If you'd like to have another go\n"
+          " just click 'Run Program' ^")
 
 
 start()
