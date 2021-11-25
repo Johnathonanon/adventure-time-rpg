@@ -57,6 +57,9 @@ room_list = [
                     "with what can only be described as violent intent.\n"
                     "Attacking would be a better bet\n",
      "monster_presence": 1,
+     "monster_class": "Skeleton",
+     "monster_hp": 40,
+     "monster_attack": 5,
      "direction_choices": {
          "forward": 3,
          "right": 4
@@ -82,7 +85,10 @@ room_list = [
      "interaction": "\nOnce again the only seemingly interactable objects\n"
                     "in this room are both animated and very agressive.\n"
                     "This is no place for pacifists unfortunately.\n",
-     "monster_presence": 1,
+     "monster_presence": 2,
+     "monster_class": "Zombie",
+     "monster_hp": 50,
+     "monster_attack": 10,
      "direction_choices": {
          "left": 6,
          "right": 5
@@ -142,6 +148,9 @@ room_list = [
     {"description": "room 8",
      "interaction": "",
      "monster_presence": 1,
+     "monster_class": "Ogre",
+     "monster_hp": 70,
+     "monster_attack": 15,
      "direction_choices": ""}
 ]
 
@@ -282,12 +291,12 @@ def run_battle(current_room, player):
     player and monster.
     """
     time.sleep(1)
-    if current_room == 1:
-        monster = Monster("Skeleton", 40, 5)
-    elif current_room == 3:
-        monster = Monster("Zombie", 50, 10)
-    else:
-        monster = Monster("Ogre", 70, 15)
+    for monster in room_list[current_room]["monster_presence"]:
+        monster = Monster(
+            room_list[current_room]["monster_class"],
+            room_list[current_room]["monster_hp"],
+            room_list[current_room]["monster_attack"])
+        return monster
 
     print(f"\nYou are fighting a {monster.monster_class}!")
 
