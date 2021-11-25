@@ -45,7 +45,7 @@ room_list = [
                     "This room is the most brightly lit area so far.\n"
                     "It's made from the same stone as everywhere else,\n"
                     "except for what resembles narrow veins of pulsing light\n"
-                    " flowing from the walls to the center of the room.\n"
+                    "flowing from the walls to the center of the room.\n"
                     "In the center stands a very unhappy looking monster.\n"
                     "There are two exits from the room,\none straight ahead\n"
                     "and one to the right.\nThe one straight ahead has a\n"
@@ -64,7 +64,23 @@ room_list = [
          "forward": 2,
          "right": 3
      }},
-    {"description": "none",
+    {"progress_text": "\nYou proceed through the door"
+                      " directly in front of you.\n"
+                      "The hallway you find yourself in is the darkest yet.\n"
+                      "There seems to be an ominous feeling in the air,\n"
+                      "and a somewhat tangy smell assualts your nose.\n"
+                      "The doorway to the room ahead appears before you,\n"
+                      "and you continue on into the unknown.\n"
+                      "As soon as you step foot over the threshold,\n"
+                      "a door slams shut behind you,\n"
+                      "sealing you from the corridor behind.\n"
+                      "A hissing noise accompanies the appearance\nof"
+                      " a thick luminescent green fog,\n"
+                      "rapidly rising from every surface.\n"
+                      "Your last thought as the world goes black\n"
+                      "is how poor your luck must be,\n"
+                      "but perhaps in another life you will succeed...\n",
+     "description": "none",
      "interaction": "none",
      "monster_presence": 0,
      "direction_choices": "none"},
@@ -290,6 +306,7 @@ def run_battle(current_room, player):
     player and monster.
     """
     time.sleep(1)
+
     for monster in range(room_list[current_room]["monster_presence"]):
         monster = Monster(
             room_list[current_room]["monster_class"],
@@ -297,7 +314,14 @@ def run_battle(current_room, player):
             room_list[current_room]["monster_attack"])
         return monster
 
-    if room_list[current_room]["monster_presence"] > 0:
+    if room_list[current_room]["monster_presence"] == 0:
+
+        print("\nI know you're eager Adventurer...\n"
+              "but there's nothing to fight...\n"
+              "except perhaps your own inner demons?")
+        prompt_user(current_room, player)
+    else:
+
         print(f"\nYou are fighting a {monster.monster_class}!")
 
         attack_modifier = random.uniform(0.8, 1.2)
@@ -319,11 +343,6 @@ def run_battle(current_room, player):
                       f"Congratulations {player.player_name}!")
                 room_list[current_room]["monster_presence"] -= 1
                 prompt_user(current_room, player)
-    else:
-        print("\nI know you're eager Adventurer...\n"
-              "but there's nothing to fight...\n"
-              "except perhaps your own inner demons?")
-        prompt_user(current_room, player)
 
 
 def player_interact(current_room, player):
