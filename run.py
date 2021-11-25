@@ -84,7 +84,15 @@ room_list = [
      "interaction": "none",
      "monster_presence": 0,
      "direction_choices": "none"},
-    {"description": "\nYou find yourself at one end of a long narrow room.\n"
+    {"progress_text": "\nYou proceed through the door to the right."
+                      "You enter a long straight corridor,\n"
+                      "at the end of which you can see\n"
+                      "light pouring from what is evidently the next room.\n"
+                      "You continue forward cautiously,\n"
+                      "and once again you can see something moving\n"
+                      "ahead as you get closer to the doorway.\n"
+                      "You enter the next room\n",
+     "description": "\nYou find yourself at one end of a long narrow room.\n"
                     "It perfectly resembles the previous room,\n"
                     "except for the different dimenions.\n"
                     "Directly in front of you,\nroughly a quarter"
@@ -266,7 +274,7 @@ def prompt_user(current_room, player):
                 "direction_choices").get(direction)
             run_game(current_room, player)
         else:
-            print("You must defeat the monster(s) to proceed")
+            print("\nYou must defeat the monster(s) to proceed")
             prompt_user(current_room, player)
     elif choice == "Inspect":
         inspect_room(current_room, player)
@@ -344,8 +352,8 @@ def run_battle(current_room, player):
                       "But then again everyone gets unlucky.")
                 abort_game()
             else:
-                print(f"You defeated the {monster.monster_class}!"
-                      f"Congratulations {player.player_name}!")
+                print(f"\nYou defeated the {monster.monster_class}!"
+                      f"\nCongratulations {player.player_name}!")
                 room_list[current_room]["monster_presence"] -= 1
                 prompt_user(current_room, player)
 
