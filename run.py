@@ -84,7 +84,7 @@ room_list = [
      "interaction": "none",
      "monster_presence": 0,
      "direction_choices": "none"},
-    {"progress_text": "\nYou proceed through the door to the right."
+    {"progress_text": "\nYou proceed through the door to the right.\n"
                       "You enter a long straight corridor,\n"
                       "at the end of which you can see\n"
                       "light pouring from what is evidently the next room.\n"
@@ -94,7 +94,7 @@ room_list = [
                       "You enter the next room\n",
      "description": "\nYou find yourself at one end of a long narrow room.\n"
                     "It perfectly resembles the previous room,\n"
-                    "except for the different dimenions.\n"
+                    "except for the different dimensions.\n"
                     "Directly in front of you,\nroughly a quarter"
                     " the way down the long room,\nstands a monster.\n"
                     "And roughy halfway,\nin front of the first"
@@ -172,7 +172,7 @@ room_list = [
          "left": 7,
          "right": 6
      }},
-    {"progress_text": "\nYou decide to take the right branch,"
+    {"progress_text": "\nYou decide to take the right branch,\n"
                       "and slowly but surely you can see\n"
                       "the blue glow in the distance is getting brighter.\n"
                       "As you get closer the air seems to crackle,\n"
@@ -243,7 +243,7 @@ room_list = [
                     "Good thing it's not poison or somethings.",
      "monster_presence": 0,
      "direction_choices": {
-         "forward": 7
+         "forward": 8
      }},
     {"progress_text": "You ",
      "description": "room 8",
@@ -313,7 +313,7 @@ def start():
 
     print("\n****************************************"
           f"\nWelcome {player_name}!\n"
-          f"You are play as a {player_class}\n"
+          f"You are playing as a {player_class}\n"
           f"Your Attack power is {player.attack}\n"
           f"And you have {player.health_points} Health Points\n"
           "****************************************\n"
@@ -338,7 +338,7 @@ def prompt_user(current_room, player):
     """
     Prompts user to select a command and progresses game
     """
-    print(f"\nWhat would you like to do {player.player_name}?")
+    print(f"\nWhat would you like to do {player.player_name}?\n")
 
     player_choices = ["Continue", "Inspect", "Attack", "Interact", "Flee"]
     choice = enquiries.choose("", player_choices)
