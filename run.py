@@ -259,8 +259,6 @@ room_list = [
 class Player():
     """
     Main player class. Sets name, player class, hp, and attack.
-    Has methods for progressing through dungeon, exploring, interacting,
-    fleeing and attacking
     """
     def __init__(self, player_name, player_class, health_points, attack):
         self.player_name = player_name
@@ -281,8 +279,7 @@ class Monster():
 
 class Room():
     """
-    Main room class, builds instance of room as player progresses through game.
-    Sets room_id and monster_presence
+    Main room class, sets room_id and monster_presence
     """
     def __init__(self, room_id, monster_presence):
         self.room_id = room_id
@@ -291,7 +288,7 @@ class Room():
 
 def start():
     """
-    Starts game and confirms user wishes to play
+    Starts game and builds player character
     """
     player_name = input("\nPlease enter your name: ")
 
@@ -381,7 +378,7 @@ def inspect_room(current_room, player):
     """
     When user selects 'Inspect' prints a brief description
     of the current room, then prompts the player once more.
-    Description is different for each room depending on unique ID
+    Description is different for each room
     """
     print("\nYou inspect your surroundings...\n")
 
@@ -451,7 +448,7 @@ def player_interact(current_room, player):
 
 def abort_game():
     """
-    Aborts game on user prompt
+    Ends game on user prompt or 'death' room
     """
     print("\nWell that's a pity :( Bye Bye\n"
           "If you'd like to have another go\n"
