@@ -243,7 +243,23 @@ room_list = [
      "direction_choices": {
          "forward": 8
      }},
-    {"progress_text": "You ",
+    {"progress_text": "\nYou exit the room and enter the corridor beyond.\n"
+                      "Similar to the entrance chamber,\n"
+                      "this corridor is lined with statues.\n"
+                      "As you make your way to the unusually\n"
+                      "large doorway ahead, you begin to feel like\n"
+                      "you have an honour guard of stone soldiers.\n"
+                      "As you near the door you can see a large lump\n"
+                      "lying in the middle of the floor,\n"
+                      "and the smell that assails your nostrils\n"
+                      "is nothing short of noxious.\n"
+                      "You stand and gather your courage a moment,\n"
+                      "before gritting your teeth, and entering.\n"
+                      "The moment you enter the room\n"
+                      "the lump begins to stir...\n"
+                      "You don't need to guess what this creature is,"
+                      "as it stands up and faces you it becomes\n"
+                      "immediately clear you're facing an Ogre.\n",
      "description": "room 8",
      "interaction": "",
      "monster_presence": 1,
