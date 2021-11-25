@@ -127,8 +127,8 @@ room_list = [
                       "you feel like you can hear a deep rumbling.\n"
                       "You continue forward and eventually\n"
                       "you can tell you have entered another room.\n"
-                      "You can barely make out the fact that it appears\n"
-                      "cylindrical, and the rumbling has gotten louder."
+                      "You can barely make out the fact that it is\n"
+                      "cylindrical, and the rumbling has gotten louder.\n"
                       "Just as you're about to retreat,\n"
                       "a door slams shut behind you,\n"
                       "and with a deafening grating noise\n"
@@ -369,7 +369,7 @@ def run_game(current_room, player):
     then prompts for each 'room'
     """
     time.sleep(1)
-    if current_room == 2 or 5:
+    if current_room == 2 or current_room == 4:
         print(room_list[current_room]["progress_text"])
         abort_game()
     else:
@@ -452,9 +452,9 @@ def abort_game():
     """
     Aborts game on user prompt
     """
-    print("\nWell that's a pity :( Bye Bye"
+    print("\nWell that's a pity :( Bye Bye\n"
           "If you'd like to have another go\n"
-          " just click 'Run Program' ^")
+          "just click 'Run Program' ^")
 
 
 start()
