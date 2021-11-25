@@ -20,7 +20,7 @@ room_list = [
                     "Maybe you should continue on?\n",
      "monster_presence": 0,
      "direction_choices": {
-         "forward": 2
+         "forward": 1
      }},
     {"progress_text": "\nYou continue forward"
                       " through the only visible doorway,\n"
@@ -61,8 +61,8 @@ room_list = [
      "monster_hp": 40,
      "monster_attack": 5,
      "direction_choices": {
-         "forward": 3,
-         "right": 4
+         "forward": 2,
+         "right": 3
      }},
     {"description": "none",
      "interaction": "none",
@@ -90,8 +90,8 @@ room_list = [
      "monster_hp": 50,
      "monster_attack": 10,
      "direction_choices": {
-         "left": 6,
-         "right": 5
+         "left": 5,
+         "right": 4
      }},
     {"description": "none",
      "interaction": "none",
@@ -143,7 +143,7 @@ room_list = [
      "interaction": "room 7 interaction",
      "monster_presence": 0,
      "direction_choices": {
-         "forward": 8
+         "forward": 7
      }},
     {"description": "room 8",
      "interaction": "",
