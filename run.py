@@ -413,7 +413,7 @@ def run_battle(current_room, player):
 
         print(f"\nYou are fighting a {monster.monster_class}!")
 
-        while monster.health_points > 0 or player.health_points > 0:
+        while monster.health_points > 0 and player.health_points > 0:
 
             attack_modifier = random.uniform(0.8, 1.2)
             monster_roll = round(monster.attack * attack_modifier)
@@ -426,7 +426,7 @@ def run_battle(current_room, player):
                   f" {player_roll} points of damage")
             monster.health_points = monster.health_points - player_roll
         else:
-            if player.health_points == 0:
+            if player.health_points <= 0:
                 print("Oh no..."
                       "You died..."
                       "That was highly unexpected."
@@ -435,6 +435,7 @@ def run_battle(current_room, player):
             else:
                 print(f"\nYou defeated the {monster.monster_class}!"
                       f"\nCongratulations {player.player_name}!")
+                print(player.health_points)
                 room_list[current_room]["monster_presence"] -= 1
                 prompt_user(current_room, player)
 
