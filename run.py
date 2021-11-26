@@ -28,9 +28,6 @@ room_list = [
                       "The corridor also gives off a dull ambient light,\n"
                       "evidently magical in nature,\n"
                       "which is just barely enough to see by.\n"
-                      "It's obviously very old,"
-                      " with years of accumulated dust,\n"
-                      "and cobwebs hanging from ceilings and corners.\n"
                       "You come to a left turn in the passage"
                       " and continue on,\n"
                       "as it's the only way to go.\n"
@@ -446,12 +443,12 @@ def run_battle(current_room, player):
             print(f"\nThe {monster.monster_class} attacks"
                   f" for {monster_roll} points of damage!")
             player.health_points = player.health_points - monster_roll
-            print(f"\nYou have {player.health_points} HP left\n")
+            print(f"\nYou have {player.health_points} HP left")
             print(f"\n{player.player_name} attacks for"
                   f" {player_roll} points of damage")
             monster.health_points = monster.health_points - player_roll
             print(f"\nThe {monster.monster_class} has"
-                  f" {monster.health_points} HP left\n")
+                  f" {monster.health_points} HP left")
         else:
             if player.health_points <= 0:
                 print("Oh no...\n"
