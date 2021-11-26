@@ -325,13 +325,15 @@ def start():
 
     current_room = 0
 
+    time.sleep(0.5)
     print("\n****************************************"
           f"\nWelcome {player_name}!\n"
           f"You are playing as a {player_class}\n"
           f"Your Attack power is {player.attack}\n"
           f"And you have {player.health_points} Health Points\n"
-          "****************************************\n"
-          "\nEver since you were old enough to\n"
+          "****************************************\n")
+    time.sleep(0.5)
+    print("\nEver since you were old enough to\n"
           "listen to stories and play with toys\n"
           "you have wished to be an Adventurer.\n"
           "One of those brave and special souls\n"
@@ -442,6 +444,7 @@ def run_battle(current_room, player):
             monster_roll = round(monster.attack * attack_modifier)
             player_roll = round(player.attack * attack_modifier)
 
+            time.sleep(0.5)
             print(f"\nThe {monster.monster_class} attacks"
                   f" for {monster_roll} points of damage!")
             player.health_points = player.health_points - monster_roll
@@ -466,11 +469,11 @@ def run_battle(current_room, player):
                       "That was tough.\n"
                       "But you came prepared!\n"
                       "You chug a health potion,\n"
-                      "and feel 100% again!")
+                      "and feel 100% again!\n")
 
                 player.health_points = full_hp
 
-                print(player.health_points)
+                print(f"HP = {player.health_points}")
 
                 room_list[current_room]["monster_presence"] -= 1
                 prompt_user(current_room, player)
