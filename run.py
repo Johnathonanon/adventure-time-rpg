@@ -317,13 +317,13 @@ def start():
 
     if player_class == 'Warrior':
         health_points = random.randint(90, 100)
-        attack = random.randint(10, 15)
+        attack = random.randint(15, 20)
     elif player_class == 'Wizard':
         health_points = random.randint(70, 80)
-        attack = random.randint(20, 25)
+        attack = random.randint(25, 30)
     else:
         health_points = random.randint(80, 90)
-        attack = random.randint(15, 20)
+        attack = random.randint(20, 25)
 
     player = Player(player_name, player_class, health_points, attack)
 
