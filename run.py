@@ -438,10 +438,10 @@ def inspect_room(current_room, player):
     print("\nYou inspect your surroundings...\n")
 
     time.sleep(1)
-    if room_list[current_room]["monster_presence"] == 0:
-        print(room_list[current_room]["description1"])
-    else:
+    if room_list[current_room]["monster_presence"] > 0:
         print(room_list[current_room]["description2"])
+    else:
+        print(room_list[current_room]["description1"])
     prompt_user(current_room, player)
 
 
