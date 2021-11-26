@@ -236,7 +236,7 @@ room_list = [
                     "Good thing it's not poison or somethings.",
      "monster_presence": 0,
      "direction_choices": {
-         "forward": 8
+         "Forward": 8
      }},
     {"progress_text": "\nYou exit the room and enter the corridor beyond.\n"
                       "Similar to the entrance chamber,\n"
@@ -266,9 +266,11 @@ room_list = [
                     "It doesn't reply.\n",
      "monster_presence": 1,
      "monster_class": "Ogre",
-     "monster_hp": 80,
+     "monster_hp": 70,
      "monster_attack": 20,
-     "direction_choices": "Home"}
+     "direction_choices": {
+         "Home": 9
+     }}
 ]
 
 
@@ -367,6 +369,16 @@ def prompt_user(current_room, player):
                   "and the room has no other exit.\n"
                   "Perhaps a risk must be taken...")
             prompt_user(current_room, player)
+        elif current_room == 8 and room_list[
+                current_room]["monster_presence"] == 0:
+            print("\nWow, nice work!\n"
+                  "First job as an Adventurer done and dusted.\n"
+                  "You step past the dead ogre,\n"
+                  "empty that lovely treasure chest\n"
+                  "of all its goodies and decide it's time to skedaddle...\n"
+                  "And as you're walking back through the dungeon,\n"
+                  "your thoughts are already turning to your next job.\n"
+                  "Onward Adventurer!")
         elif room_list[current_room]["monster_presence"] == 0:
             time.sleep(1)
             direction = enquiries.choose(
