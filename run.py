@@ -52,7 +52,7 @@ room_list = [
      "monster_presence": 1,
      "monster_class": "Skeleton",
      "monster_hp": 50,
-     "monster_attack": 8,
+     "monster_attack": 10,
      "direction_choices": {
          "forward": 2,
          "right": 3
@@ -105,7 +105,7 @@ room_list = [
      "monster_presence": 2,
      "monster_class": "Zombie",
      "monster_hp": 60,
-     "monster_attack": 10,
+     "monster_attack": 15,
      "direction_choices": {
          "left": 5,
          "right": 4
@@ -160,7 +160,7 @@ room_list = [
                     "right at the end of the path.\n"
                     "This way gives you a feeling of home.\n",
      "monster_presence": 0,
-     "monster_class": "Ogre",
+     "monster_class": "",
      "direction_choices": {
          "left": 7,
          "right": 6
@@ -260,7 +260,7 @@ room_list = [
      "monster_presence": 1,
      "monster_class": "Ogre",
      "monster_hp": 80,
-     "monster_attack": 16,
+     "monster_attack": 20,
      "direction_choices": ""}
 ]
 
