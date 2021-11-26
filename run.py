@@ -473,29 +473,28 @@ def run_battle(current_room, player):
             monster.health_points = monster.health_points - player_roll
             print(f"\nThe {monster.monster_class} has"
                   f" {monster.health_points} HP left")
-        else:
             if player.health_points <= 0:
                 print("\nOh no...\n"
                       "You died...\n"
                       "That was highly unexpected.\n"
                       "But then again everyone gets unlucky.\n")
                 abort_game()
-            else:
-                print(f"\nYou defeated the {monster.monster_class}!"
-                      f"\nCongratulations {player.player_name}!")
+        else:
+            print(f"\nYou defeated the {monster.monster_class}!"
+                  f"\nCongratulations {player.player_name}!")
 
-                print("\nWhew...\n"
-                      "That was tough.\n"
-                      "But you came prepared!\n"
-                      "You chug a health potion,\n"
-                      "and feel 100% again!\n")
+            print("\nWhew...\n"
+                  "That was tough.\n"
+                  "But you came prepared!\n"
+                  "You chug a health potion,\n"
+                  "and feel 100% again!\n")
 
-                player.health_points = full_hp
+            player.health_points = full_hp
 
-                print(f"HP = {player.health_points}")
+            print(f"HP = {player.health_points}/{player.health_points}")
 
-                room_list[current_room]["monster_presence"] -= 1
-                prompt_user(current_room, player)
+            room_list[current_room]["monster_presence"] -= 1
+            prompt_user(current_room, player)
 
 
 def player_interact(current_room, player):
