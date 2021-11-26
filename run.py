@@ -11,7 +11,7 @@ import enquiries
 
 
 room_list = [
-    {"description1": "\nYou find your self in a large stone room,\n"
+    {"description2": "\nYou find your self in a large stone room,\n"
                      "3 times as wide as it is long.\n"
                      "It's dark, but there appears to be some sort\n"
                      "of ethereal light coming from the stone itself.\n"
@@ -113,6 +113,7 @@ room_list = [
      "interaction": "\nOnce again the only seemingly interactable objects\n"
                     "in this room are the two monsters...\n"
                     "You don't really want to do that do you?",
+     "monster_presence": 2,
      "monster_class": "Zombie",
      "monster_hp": 60,
      "monster_attack": 15,
@@ -153,7 +154,7 @@ room_list = [
                       "but you can barely make out a blue-ish glow\n"
                       "right at the end of the path.\n"
                       "This way gives you a feeling of home.\n",
-     "description1": "\nYou find yourself at a junction.\n"
+     "description2": "\nYou find yourself at a junction.\n"
                      "The left path continues to what appears\n"
                      "to be a blank wall in the distance,\n"
                      "however, that way gives you a sense of excitement.\n"
@@ -189,7 +190,7 @@ room_list = [
                       "and you step forward through the haze.\n"
                       "As you do, the haze solidifies,\n"
                       "and you realise you will not be returning that way.\n",
-     "description1": "\nYou are standing just inside the doorway,\n"
+     "description2": "\nYou are standing just inside the doorway,\n"
                      "at the end of what appears to be a stone bridge.\n"
                      "The room appears square,\n"
                      "and you have entered at one of the corners.\n"
@@ -229,7 +230,7 @@ room_list = [
                       "Before you enter you scan the room for threats\n"
                       "but see nothing...\n"
                       "You cautiously enter...\n",
-     "description1": "You are standing in a brightly lit circular room,\n"
+     "description2": "You are standing in a brightly lit circular room,\n"
                      "smaller than any so far.\n"
                      "To the right of the room,\n"
                      "not visible from the hallway,\n"
@@ -439,9 +440,9 @@ def inspect_room(current_room, player):
 
     time.sleep(1)
     if room_list[current_room]["monster_presence"] > 0:
-        print(room_list[current_room]["description2"])
-    else:
         print(room_list[current_room]["description1"])
+    else:
+        print(room_list[current_room]["description2"])
     prompt_user(current_room, player)
 
 
@@ -492,22 +493,22 @@ def run_battle(current_room, player):
                       "That was highly unexpected.\n"
                       "But then again everyone gets unlucky.\n")
                 abort_game()
-        else:
-            print(f"\nYou defeated the {monster.monster_class}!"
-                  f"\nCongratulations {player.player_name}!")
+            elif monster.health_points <= 0:
+                print(f"\nYou defeated the {monster.monster_class}!\n"
+                      f"\nCongratulations {player.player_name}!")
 
-            print("\nWhew...\n"
-                  "That was tough.\n"
-                  "But you came prepared!\n"
-                  "You chug a health potion,\n"
-                  "and feel 100% again!\n")
+                print("\nWhew...\n"
+                      "That was tough.\n"
+                      "But you came prepared!\n"
+                      "You chug a health potion,\n"
+                      "and feel 100% again!\n")
 
-            player.health_points = full_hp
+                player.health_points = full_hp
 
-            print(f"HP = {player.health_points}/{player.health_points}")
+                print(f"HP = {player.health_points}/{player.health_points}")
 
-            room_list[current_room]["monster_presence"] -= 1
-            prompt_user(current_room, player)
+                room_list[current_room]["monster_presence"] -= 1
+                prompt_user(current_room, player)
 
 
 def player_interact(current_room, player):
