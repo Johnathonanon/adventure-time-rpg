@@ -50,14 +50,12 @@ room_list = [
                     "There are two exits from the room,\none straight ahead\n"
                     "and one to the right.\nThe one straight ahead has a\n"
                     "very ominous air coming from it. The right less so.\n",
-     "interaction": "\nThe only thing to possibly interact with\n"
-                    "is the monster, which is staring at you\n"
-                    "with what can only be described as violent intent.\n"
-                    "Attacking would be a better bet\n",
+     "interaction": "\nThe only thing to possibly try and interact with\n"
+                    "is the monster, which is ill advised...",
      "monster_presence": 1,
      "monster_class": "Skeleton",
-     "monster_hp": 40,
-     "monster_attack": 5,
+     "monster_hp": 50,
+     "monster_attack": 8,
      "direction_choices": {
          "forward": 2,
          "right": 3
@@ -109,7 +107,7 @@ room_list = [
                     "This is no place for pacifists unfortunately.\n",
      "monster_presence": 2,
      "monster_class": "Zombie",
-     "monster_hp": 50,
+     "monster_hp": 60,
      "monster_attack": 10,
      "direction_choices": {
          "left": 5,
@@ -264,8 +262,8 @@ room_list = [
      "interaction": "",
      "monster_presence": 1,
      "monster_class": "Ogre",
-     "monster_hp": 70,
-     "monster_attack": 15,
+     "monster_hp": 80,
+     "monster_attack": 16,
      "direction_choices": ""}
 ]
 
@@ -368,7 +366,7 @@ def prompt_user(current_room, player):
         elif room_list[current_room]["monster_presence"] == 0:
             time.sleep(1)
             direction = enquiries.choose(
-                "Which way will you go?",
+                "Which way will you go?\n",
                 room_list[current_room]["direction_choices"])
             current_room = room_list[current_room].get(
                 "direction_choices").get(direction)
