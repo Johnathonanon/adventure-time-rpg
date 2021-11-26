@@ -1,3 +1,8 @@
+"""
+Modules for generation of random numbers,
+adding delay to functions and
+generation of user choices in prompt_user
+"""
 import random
 
 import time
