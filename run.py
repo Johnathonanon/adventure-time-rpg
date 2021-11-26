@@ -11,15 +11,15 @@ import enquiries
 
 
 room_list = [
-    {"description": "\nYou find your self in a large stone room,\n"
-                    "3 times as wide as it is long.\n"
-                    "It's dark, but there appears to be some sort\n"
-                    "of ethereal light coming from the stone itself.\n"
-                    "This place is old,\nthere's a thick layer of dust,\n"
-                    "and the air is stale.\n"
-                    "There are statues lined at even intervals,\n"
-                    "standing like sentinels around the perimeter.\n"
-                    "The only exit is directly in front of you.\n",
+    {"description1": "\nYou find your self in a large stone room,\n"
+                     "3 times as wide as it is long.\n"
+                     "It's dark, but there appears to be some sort\n"
+                     "of ethereal light coming from the stone itself.\n"
+                     "This place is old,\nthere's a thick layer of dust,\n"
+                     "and the air is stale.\n"
+                     "There are statues lined at even intervals,\n"
+                     "standing like sentinels around the perimeter.\n"
+                     "The only exit is directly in front of you.\n",
      "interaction": "\nThere doesn't seem to be much to do in this room.\n"
                     "It appears to be the entrance chamber of this dungeon.\n"
                     "Maybe you should continue on?\n",
@@ -43,15 +43,20 @@ room_list = [
                       "A frisson of nerves runs through you\n"
                       "but you steel yourself and move forward.\n"
                       "\nYou enter the room\n",
-     "description": "\nYou are in a room roughly half the size of the first.\n"
-                    "This room is the most brightly lit area so far.\n"
-                    "It's made from the same stone as everywhere else,\n"
-                    "except for what resembles narrow veins of pulsing light\n"
-                    "flowing from the walls to the center of the room.\n"
-                    "In the center stands a very unhappy looking monster.\n"
-                    "There are two exits from the room,\none straight ahead\n"
-                    "and one to the right.\nThe one straight ahead has a\n"
-                    "very ominous air coming from it. The right less so.\n",
+     "description1": "\nYou are in a room roughly\n"
+                     "half the size of the first.\n"
+                     "This room is the most brightly lit area so far.\n"
+                     "It's made from the same stone as everywhere else,\n"
+                     "except for what resembles\n"
+                     "narrow veins of pulsing light\n"
+                     "flowing from the walls to the center of the room.\n"
+                     "In the center stands a very unhappy looking Skeleton.\n"
+                     "There are two exits from the room,\none straight ahead\n"
+                     "and one to the right.\nThe one straight ahead has a\n"
+                     "very ominous air coming from it. The right less so.\n",
+     "description2": "The Skeleton now lies defeated,\n"
+                     "and the glowing veins of light have diminshed.\n"
+                     "All else remains the same.",
      "interaction": "\nThe only thing to possibly try and interact with\n"
                     "is the monster, which is ill advised...",
      "monster_presence": 1,
@@ -78,7 +83,7 @@ room_list = [
                       "Your last thought as the world goes black\n"
                       "is how poor your luck must be,\n"
                       "but perhaps in another life you will succeed...\n",
-     "description": "none",
+     "description1": "none",
      "interaction": "none",
      "monster_presence": 0,
      "direction_choices": "none"},
@@ -90,24 +95,24 @@ room_list = [
                       "and once again you can see something moving\n"
                       "ahead as you get closer to the doorway.\n"
                       "You enter the next room\n",
-     "description": "\nYou find yourself at one end of a long narrow room.\n"
-                    "It perfectly resembles the previous room,\n"
-                    "except for the different dimensions.\n"
-                    "Directly in front of you,\nroughly a quarter"
-                    " the way down the long room,\nstands a monster.\n"
-                    "And roughy halfway,\nin front of the first"
-                    " visible exit,\nstands another.\n"
-                    "The second exit from the room is"
-                    " at the very end,\nin the right corner.\n"
-                    "Similar to the last room, this door\n"
-                    "emits an extremely ominous air.\n"
-                    "Once again, the veins of light are present,\n"
-                    "flowing towards the two enemies.\n"
-                    "And once again neither looks particularly happy\n",
+     "description1": "\nYou find yourself at one end of a long narrow room.\n"
+                     "You can see two exits. One to the left,\n"
+                     "roughly at the halfway point,\n"
+                     "and one in the far right corner."
+                     "There is one monster standing\n"
+                     "near the first exit, and another near the second.\n"
+                     "Similar to the last room, the second door\n"
+                     "emits an extremely ominous air.\n"
+                     "Once again, the veins of light are present,\n"
+                     "flowing towards the two enemies.\n"
+                     "And once again neither looks particularly happy\n",
+     "description2": "Both Zombies lie dead,\n"
+                     "and the light has begun to fade.\n"
+                     "In all other aspects,\n"
+                     "the room is unchanged",
      "interaction": "\nOnce again the only seemingly interactable objects\n"
-                    "in this room are both animated and very agressive.\n"
-                    "This is no place for pacifists unfortunately.\n",
-     "monster_presence": 2,
+                    "in this room are the two monsters...\n"
+                    "You don't really want to do that do you?",
      "monster_class": "Zombie",
      "monster_hp": 60,
      "monster_attack": 15,
@@ -133,7 +138,7 @@ room_list = [
                       "the floor gives way beneath you.\n"
                       "Your last thought is\n"
                       "regret you didn't make it further.",
-     "description": "none",
+     "description1": "none",
      "interaction": "none",
      "monster_presence": 0,
      "direction_choices": "none"},
@@ -148,14 +153,14 @@ room_list = [
                       "but you can barely make out a blue-ish glow\n"
                       "right at the end of the path.\n"
                       "This way gives you a feeling of home.\n",
-     "description": "\nYou find yourself at a junction.\n"
-                    "The left path continues to what appears\n"
-                    "to be a blank wall in the distance,\n"
-                    "however, that way gives you a sense of excitement.\n"
-                    "The right stretches farther than you can see,\n"
-                    "but you can barely make out a blue-ish glow\n"
-                    "right at the end of the path.\n"
-                    "This way gives you a feeling of home.\n",
+     "description1": "\nYou find yourself at a junction.\n"
+                     "The left path continues to what appears\n"
+                     "to be a blank wall in the distance,\n"
+                     "however, that way gives you a sense of excitement.\n"
+                     "The right stretches farther than you can see,\n"
+                     "but you can barely make out a blue-ish glow\n"
+                     "right at the end of the path.\n"
+                     "This way gives you a feeling of home.\n",
      "interaction": "\nYou find yourself at a junction.\n"
                     "The left path continues to what appears\n"
                     "to be a blank wall in the distance,\n"
@@ -184,22 +189,22 @@ room_list = [
                       "and you step forward through the haze.\n"
                       "As you do, the haze solidifies,\n"
                       "and you realise you will not be returning that way.\n",
-     "description": "\nYou are standing just inside the doorway,\n"
-                    "at the end of what appears to be a stone bridge.\n"
-                    "The room appears square,\n"
-                    "and you have entered at one of the corners.\n"
-                    "Glancing upwards, the room doesn't"
-                    " appear to have a ceiling,\n"
-                    "just a darkness stretching infinitely to the heavens.\n"
-                    "Similarly, peeking cautiously over"
-                    " the edge of the 'bridge'\n"
-                    "shows a dark chasm reaching down"
-                    " into the bowels of the earth.\n"
-                    "At the end of the walkway is a platform.\n"
-                    "And on that platfrom is a strange floating blue disc.\n"
-                    "It's approximately twice your height,\n"
-                    "and made of what looks like rolling magical vapor.\n"
-                    "You feel the hairs rise on your arms as you approach.\n",
+     "description1": "\nYou are standing just inside the doorway,\n"
+                     "at the end of what appears to be a stone bridge.\n"
+                     "The room appears square,\n"
+                     "and you have entered at one of the corners.\n"
+                     "Glancing upwards, the room doesn't"
+                     " appear to have a ceiling,\n"
+                     "just a darkness stretching infinitely to the heavens.\n"
+                     "Similarly, peeking cautiously over"
+                     " the edge of the 'bridge'\n"
+                     "shows a dark chasm reaching down"
+                     " into the bowels of the earth.\n"
+                     "At the end of the walkway is a platform.\n"
+                     "And on that platfrom is a strange floating blue disc.\n"
+                     "It's approximately twice your height,\n"
+                     "and made of what looks like rolling magical vapor.\n"
+                     "You feel the hairs rise on your arms as you approach.\n",
      "interaction": "\nYou hesitantly approach the"
                     " blue disc in front of you.\n"
                     "If it wasn't for the fact you are trapped in here,\n"
@@ -224,17 +229,18 @@ room_list = [
                       "Before you enter you scan the room for threats\n"
                       "but see nothing...\n"
                       "You cautiously enter...\n",
-     "description": "You are standing in a brightly lit circular room,\n"
-                    "smaller than any so far.\n"
-                    "To the right of the room, not visible from the hallway,\n"
-                    "is a small waterfall, flowing into a basin.\n"
-                    "There's a small wooden cup"
-                    " sitting on the side of the basin,\n"
-                    "and a plaque that reads:\n"
-                    "****************************************\n"
-                    "REST WEARY ADVENTURER AND TAKE A DRINK\n"
-                    "FOR THE NEXT ROOM WILL PUSH YOU TO THE BRINK\n"
-                    "****************************************\n",
+     "description1": "You are standing in a brightly lit circular room,\n"
+                     "smaller than any so far.\n"
+                     "To the right of the room,\n"
+                     "not visible from the hallway,\n"
+                     "is a small waterfall, flowing into a basin.\n"
+                     "There's a small wooden cup"
+                     " sitting on the side of the basin,\n"
+                     "and a plaque that reads:\n"
+                     "****************************************\n"
+                     "REST WEARY ADVENTURER AND TAKE A DRINK\n"
+                     "FOR THE NEXT ROOM WILL PUSH YOU TO THE BRINK\n"
+                     "****************************************\n",
      "interaction": "\nYou drink a cup of water from the fountain.\n"
                     "It's cool and refreshing and\n"
                     "you feel yourself revitalised.\n"
@@ -260,13 +266,17 @@ room_list = [
                       "You don't need to guess what this creature is,\n"
                       "as it stands up and faces you it becomes\n"
                       "immediately clear you're facing an Ogre.\n",
-     "description": "You're standing in a gargantuan square room.\n"
-                    "It's made from the same stone as this entire dungeon\n"
-                    "but it's the brightest room so far.\n"
-                    "Apart from its stinky occupant\n"
-                    "it seems rather unremarkable...\n"
-                    "Well, except for the large chest at the very\n"
-                    "far end of the room that is...",
+     "description1": "You're standing in a gargantuan square room.\n"
+                     "It's made from the same stone as this entire dungeon\n"
+                     "but it's the brightest room so far.\n"
+                     "Apart from its stinky occupant\n"
+                     "it seems rather unremarkable...\n"
+                     "Well, except for the large chest at the very\n"
+                     "far end of the room that is...",
+     "description2": "The huge ogre is no longer a threat,\n"
+                     "and the chest he was guarding is\n"
+                     "ripe for plundering.\n"
+                     "It has however gotten considerably darker.",
      "interaction": "You ask the ogre how it is today.\n"
                     "It doesn't reply.\n",
      "monster_presence": 1,
@@ -428,7 +438,10 @@ def inspect_room(current_room, player):
     print("\nYou inspect your surroundings...\n")
 
     time.sleep(1)
-    print(room_list[current_room]["description"])
+    if room_list[current_room]["monster_presence"] == 0:
+        print(room_list[current_room]["description1"])
+    else:
+        print(room_list[current_room]["description2"])
     prompt_user(current_room, player)
 
 
