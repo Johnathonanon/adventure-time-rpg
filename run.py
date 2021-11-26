@@ -378,7 +378,7 @@ def prompt_user(current_room, player):
                   "of all its goodies and decide it's time to skedaddle...\n"
                   "And as you're walking back through the dungeon,\n"
                   "your thoughts are already turning to your next job.\n"
-                  "Onward Adventurer!")
+                  "\nOnward Adventurer!")
         elif room_list[current_room]["monster_presence"] == 0:
             time.sleep(1)
             direction = enquiries.choose(
