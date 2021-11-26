@@ -20,7 +20,7 @@ room_list = [
                     "Maybe you should continue on?\n",
      "monster_presence": 0,
      "direction_choices": {
-         "forward": 1
+         "Forward": 1
      }},
     {"progress_text": "\nYou continue forward"
                       " through the only visible doorway,\n"
@@ -54,8 +54,8 @@ room_list = [
      "monster_hp": 50,
      "monster_attack": 10,
      "direction_choices": {
-         "forward": 2,
-         "right": 3
+         "Forward": 2,
+         "Right": 3
      }},
     {"progress_text": "\nYou proceed through the door"
                       " directly in front of you.\n"
@@ -107,8 +107,8 @@ room_list = [
      "monster_hp": 60,
      "monster_attack": 15,
      "direction_choices": {
-         "left": 5,
-         "right": 4
+         "Left": 5,
+         "Right": 4
      }},
     {"progress_text": "\nDespite your misgivings, you decide to take\n"
                       "the doorway in the far right corner of the room.\n"
@@ -162,8 +162,8 @@ room_list = [
      "monster_presence": 0,
      "monster_class": "",
      "direction_choices": {
-         "left": 7,
-         "right": 6
+         "Left": 7,
+         "Right": 6
      }},
     {"progress_text": "\nYou decide to take the right branch,\n"
                       "and slowly but surely you can see\n"
@@ -222,7 +222,7 @@ room_list = [
      "description": "You are standing in a brightly lit circular room,\n"
                     "smaller than any so far.\n"
                     "To the right of the room, not visible from the hallway,\n"
-                    "is a small waterfall, flowing into a basin."
+                    "is a small waterfall, flowing into a basin.\n"
                     "There's a small wooden cup"
                     " sitting on the side of the basin,\n"
                     "and a plaque that reads:\n"
@@ -232,7 +232,7 @@ room_list = [
                     "****************************************\n",
      "interaction": "\nYou drink a cup of water from the fountain.\n"
                     "It's cool and refreshing and\n"
-                    " you feel yourself revitalised.\n"
+                    "you feel yourself revitalised.\n"
                     "Good thing it's not poison or somethings.",
      "monster_presence": 0,
      "direction_choices": {
@@ -252,16 +252,23 @@ room_list = [
                       "before gritting your teeth, and entering.\n"
                       "The moment you enter the room\n"
                       "the lump begins to stir...\n"
-                      "You don't need to guess what this creature is,"
+                      "You don't need to guess what this creature is,\n"
                       "as it stands up and faces you it becomes\n"
                       "immediately clear you're facing an Ogre.\n",
-     "description": "room 8",
-     "interaction": "",
+     "description": "You're standing in a gargantuan square room.\n"
+                    "It's made from the same stone as this entire dungeon\n"
+                    "but it's the brightest room so far.\n"
+                    "Apart from its stinky occupant\n"
+                    "it seems rather unremarkable...\n"
+                    "Well, except for the large chest at the very\n"
+                    "far end of the room that is...",
+     "interaction": "You ask the ogre how it is today.\n"
+                    "It doesn't reply.\n",
      "monster_presence": 1,
      "monster_class": "Ogre",
      "monster_hp": 80,
      "monster_attack": 20,
-     "direction_choices": ""}
+     "direction_choices": "Home"}
 ]
 
 
@@ -451,7 +458,7 @@ def run_battle(current_room, player):
                   f" {monster.health_points} HP left")
         else:
             if player.health_points <= 0:
-                print("Oh no...\n"
+                print("\nOh no...\n"
                       "You died...\n"
                       "That was highly unexpected.\n"
                       "But then again everyone gets unlucky.\n")
