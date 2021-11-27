@@ -324,7 +324,7 @@ def start():
     """
     Starts game and builds player character
     """
-    player_name = input("\nPlease enter your name: ")
+    player_name = input("\nPlease enter your name: ") or "Adventurer"
 
     print("\nPlease choose a class:")
 
