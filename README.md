@@ -74,6 +74,8 @@ The player navigates the dungeon via a 'menu'. This menu is navigated using the 
 
     ![Picture of no battle snip](readme-images/nobattlesnip.PNG)
 
+    ![Picture of defeat snip](readme-images/defeatsnip.PNG)
+
     - Interact - allows the player to interact with objects if applicable or prints a message if not. Main interactable object is portal in room 6 which 'teleports' player back to room one. This is done by updating current room value.
 
     ![Picture of interact snip 1](readme-images/interactsnip1.PNG)
