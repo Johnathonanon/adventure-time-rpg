@@ -88,7 +88,7 @@ The player navigates the dungeon via a 'menu'. This menu is navigated using the 
 
 - **Data Structures**
 
-  - The main data structure used in this application is room_list. This is a list of dictionaries, each dict representing a room in the dungeon. Each dict in the list has a different combination of keys and values depending on the 'room'. The player starts at room 0, index 0 in list, and this is updated + 1 as player progresses through the dungeon. Every function uses the data stored in this list. Prints statements are retrieved, monster presence and instances are created using this data, next available room(s) displayed to the user, etc. 
+  - The main data structure used in this application is room_list. This is a list of dictionaries, each dict representing a room in the dungeon. Each dict in the list has a different combination of keys and values depending on the 'room'. The player starts at room 0, index 0 in list, and this is updated to as player progresses through the dungeon. Every function uses the data stored in this list. Prints statements are retrieved, monster presence and instances are created using this data, next available room(s) displayed to the user, etc. 
 
   - Two classes are also used in this application, one for Player, and one Monster. Player is initialised at the very start as the 'player' variable and is used in ever function except for 'start'. The Monster class is initialised in the run_battle function and an instance created using the values in room_list as well as the monster_presence value.
 
