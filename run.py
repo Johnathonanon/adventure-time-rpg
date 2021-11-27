@@ -311,15 +311,6 @@ class Monster():
         self.attack = attack
 
 
-class Room():
-    """
-    Main room class, sets room_id and monster_presence
-    """
-    def __init__(self, room_id, monster_presence):
-        self.room_id = room_id
-        self.monster_presence = monster_presence
-
-
 def start():
     """
     Starts game and builds player character
