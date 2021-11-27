@@ -77,53 +77,8 @@ The player navigates the dungeon via a 'menu'. This menu is navigated using the 
 
     - Flee - player flees the dungeon and ends game, a goodbye message is printed to terminal.
 
-- **Welcome statement**
+    ![Picture of flee snip](readme-images/fleesnip.PNG)
 
-  - A short statement welcoming the user to the site and prompting them to input a username
-
-  ![Picture of welcome message 1](readme-images/welcomemessagesnip1.PNG)
-
-- **Username input**
-
-  - Text input box allowing the user to enter a username which is stored as a variable and used throughout the quiz. Adds a personal element to the quiz.
-
-  ![Picture of username input text box](readme-images/inputsnip.PNG)
-
-- **Confirm button**
-
-  - When clicked displays a second welcome message containing entered username to the user and runs the main quiz. If user attempts to progess without entering a username they receive an alert stating the must do so to continue.
-
-  ![Picture of confirm button](readme-images/confirmsnip.PNG)
-
-  ![Picture of username alert](readme-images/alertsnip.PNG)
-
-  ![Picture of welcome message 2](readme-images/welcomemessagesnip2.PNG)
-
-- **Instructions**
-
-  - Brief statement on how quiz works 
-
-  ![Picture of instructions section](readme-images/instructionssnip.PNG)
-
-- **Question area**
-
-  - This section is where the randomly generated question is displayed to the user. It is displayed in large text and bordered top and bottom so as to stand out. 
-
-  ![picture of question area](readme-images/questionsnip.PNG)
-
-- **Answer area**
-
-  - This section is where the four answers connected to the specific question being asked are displayed to the user. The order in which the answers appear is randomised. The answer choice appears as buttons which when clicked by the user progress the quiz. The users choice is checked against the correct answer and score variable updated accordingly. On desktop the buttons are highlighted when hovered over and on touchscreen devices they have a transfrom effect applied when tapped by the user.
-
-  ![picture of answer area 1](readme-images/answersnip1.PNG)
-
-  ![picture of answer area 2](readme-images/answersnip2.PNG)
-
-- **End of quiz**
-
-  - Once user has completed all questions the quiz is finished and the user receives feedback. This includes a congratulations message, which utilises the previously entered username for personalisation sake, their score, and a prompt to play again if desired. Clicking the play again button reloads the page and provides the user with a freshly randomised set of questions and answers.
-
-  ![picture of quiz end](readme-images/finishsnip.PNG)
 
 ### Features Left to Implement
 
