@@ -20,11 +20,11 @@ The user is initially asked to input a name and choose a class. The 3 three clas
 ![Picture of wizard class attributes](readme-images/wizardsnip.PNG)
 
 The player navigates the dungeon via a 'menu'. This menu is navigated using the arrow keys and enter key. The player has 5 choices to choose from: 
-Continue - this progresses the game to the next room if available, a short 'progress text' is printed to the terminal.
-Inspect - a brief description of the current area is printed to the terminal.
-Attack - a battle in initiated with a monster if present.
-Interact - allows the player to interact with objects if applicable.
-Flee - player flees the dungeon and ends game.
+- Continue - this progresses the game to the next room if available, a short 'progress text' is printed to the terminal.
+- Inspect - a brief description of the current area is printed to the terminal.
+- Attack - a battle in initiated with a monster if present.
+- Interact - allows the player to interact with objects if applicable.
+- Flee - player flees the dungeon and ends game.
 
 ![Picture of menu snip](readme-images/menusnip.PNG)
 
@@ -32,17 +32,50 @@ Flee - player flees the dungeon and ends game.
 
 ### Existing Features
 
-- **Heading**
+- **Player Creation**
 
-  - Heading remains static as the site progresses. It is the title of the site and as such is front and centre at all times. It is stylish but minimalist so as to not overwhelm the user but rather provide a constant point throughout the progression of the quiz.
+  - User can create a 'custom' character. This includes entering a name, which defaults to 'Adventurer' if left empty, and choosing a class, with randomised stats.
 
-  ![Picture of main heading](readme-images/headingsnip.PNG)
+  ![Picture of class choice snip](readme-images/classsnip.PNG)
 
-- **Welcome area**
+  ![Picture of warrior class attributes](readme-images/warriorsnip.PNG)
 
-  - First thing visible to user on visiting site 
+- **Menu**
 
-  ![Picture of welcome area](readme-images/welcomesnip.PNG)
+  - This is the main navigation tool of the game. Player has is given 5 choices:
+    - Continue - this progresses the game to the next room if available, player is presented with direction choices depending on current room. Current room is then updated and a short 'progress text' is printed to the terminal. If monster presence > 0 or current room is 6 player cannot progress. If chosen direction is death room, player 'dies'.
+
+    ![Picture of menu snip](readme-images/menusnip.PNG)
+
+    ![Picture of direction snip](readme-images/directionsnip.PNG)
+
+    ![Picture of no continue snip](readme-images/nocontinuesnip.PNG)
+
+    ![Picture of death snip](readme-images/deathsnip.PNG)
+
+    - Inspect - a brief description of the current area is printed to the terminal. Sometimes changes depending on in monster is 'dead' or 'alive'.
+
+    ![Picture of inspect snip 1](readme-images/inspectsnip1.PNG)
+
+    ![Picture of inspect snip 2](readme-images/inspectsnip2.PNG)
+
+    - Attack - a battle in initiated with a monster if present. During the battle, the monster and player 'attack' each other and both their health points are reduced. If monster is defeated monster presence updates and player may continue to next room. If player is defeated game ends.
+
+    ![Picture of battle snip 1](readme-images/battlesnip1.PNG)
+
+    ![Picture of battle snip 2](readme-images/battlesnip2.PNG)
+
+    ![Picture of battle snip 3](readme-images/battlesnip3.PNG)
+
+    ![Picture of no battle snip](readme-images/nobattlesnip.PNG)
+
+    - Interact - allows the player to interact with objects if applicable or prints a message if not. Main interactable object is portal in room 6 which 'teleports' player back to room one. This is done by updating current room value.
+
+    ![Picture of interact snip 1](readme-images/interactsnip1.PNG)
+
+    ![Picture of interact snip 2](readme-images/interactsnip2.PNG)
+
+    - Flee - player flees the dungeon and ends game, a goodbye message is printed to terminal.
 
 - **Welcome statement**
 
