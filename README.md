@@ -123,19 +123,21 @@ No errors returned from PEP8 linter - http://pep8online.com/
 ## Deployment
 
 - The site was deployed to Heroku. The steps to deploy are as follows:
-  - Create 
-  - From the source section drop-down menu, select the Main Branch
-  - Once the Main Branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+  - Create a heroku account
+  - Select create new app on heroku dashboard, and fill out necessary requirements (name, etc.).
+  - Once app is created, navigate to 'settings'. Set your config vars if relevant, for this project a key of PORT and value of 8000 were used. Add relevant buildpacks, for this project these were Python and Node.js. 
+  - Next navigate to 'deploy'. For this project the deployment method chosen was Github. The relevant github account and repository must be connected and then either manual or automatic deployment chosen.
+  - Once the app is succesfully built it will then be deployed and be 'live'
 
-The live link can be found here - https://johnathonanon.github.io/quick-quiz/
+The live link can be found here - https://adventure-time-rpg.herokuapp.com/
 
 ## Credits
 
-A number of questions were found here - https://www.radiotimes.com/quizzes/pub-quiz-general-knowledge/
+Credit to Code Institute for mock terminal.
 
-refreshQuiz function inspiration from here - https://stackoverflow.com/questions/5480945/refreshing-page-on-click-of-a-button/5480965
+I am hugely grateful to the Code Institute tutors, especially Jo, Kevin, and Ed for their patient help with this project. Without them it would not have gone nearly so smoothly, especially when a large rewrite was required.
 
-Some inspiration was taken from Code Institute lessons and the walkthrough project love-maths, specifically the implementation of the event listener on line 181 in script.js.
+Minor inspiration was taken from https://thecodingpie.com/post/make-your-own-text-based-adventure-game-in-python3.
 
-My mentor was very helpful and his knowledge and experience is highly appreciated. His input was especially helpful when troubleshooting the runQuiz and checkAnswer functions, on lines 116 and 160 in script.js respectively.
+My mentor was very helpful and his knowledge and experience is highly appreciated. His recommendation halfway through this project to rewrite most of the functions was daunting but ultimately improved the project and I believe (or at least hope) improved my abilities as a coder also.
 
