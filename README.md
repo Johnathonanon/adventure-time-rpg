@@ -4,7 +4,12 @@ Adventure Time RPG is a python terminal text based Role Playing Game. It is base
 
 The live link can be found here - https://adventure-time-rpg.herokuapp.com/
 
+Initial map drawn of dungeon and commands
+
 ![Picture of Excalidraw map](readme-images/excalidraw1.png) 
+
+AmIResponsive snip
+
 ![Picture of AmIResponsive snip](readme-images/amiresponsivesnip.PNG) 
 
 ## How to Play
@@ -79,65 +84,46 @@ The player navigates the dungeon via a 'menu'. This menu is navigated using the 
 
     ![Picture of flee snip](readme-images/fleesnip.PNG)
 
+- **Data Structures**
+
+  - The main data structure used in this application is room_list. This is a list of dictionaries, each dict representing a room in the dungeon. Each dict in the list has a different combination of keys and values depending on the 'room'. The player starts at room 0, index 0 in list, and this is updated + 1 as player progresses through the dungeon. Every function uses the data stored in this list. Prints statements are retrieved, monster presence and instances are created using this data, next available room(s) displayed to the user, etc. 
+
+  - Two classes are also used in this application, one for Player, and one Monster. Player is initialised at the very start as the 'player' variable and is used in ever function except for 'start'. The Monster class is initialised in the run_battle function and an instance created using the values in room_list as well as the monster_presence value.
+
 
 ### Features Left to Implement
 
-- One user stated they would like more questions or possibly a different set of questions to choose.
+- One user stated they would like more classes and a larger dungeon. This could be implemented by adding extra 'rooms' with their associated data to the rooms list. Player classes could be done similarly, when creating a character extra choices could be offered to player and data could be stored in another list for example.
 
-- I had originally intended to implement a difficulty level but chose not to. This is something I would still be interested in implementing as I feel it would only add to the enjoyability of the quiz, as well as allowing for a larger question pool, as mentioned above.
+- I had intended originally to have the monsters, and their attributes, be randomly generated but in the end decided to just create instances based on the room. I could implement this in future by giving the function an assortment of monster class and hp/attack values to use, which would be stored in another data structure.
 
-- I could possibly introduce a high score function which would store the users previous attempts and allow them to compete against themselves or others. 
+- I had also intended to include a visual element to the application. I considered adding style to the terminal and page background themselves and also adding ascii art to the 'dungeon'. My mentor advised as this is a python project I should focus mainly on getting the actual logic functioning as intended and so the style was left on the long finger and ultimately discarded. This is something I would like to implement in future however as I feel it would only add to the application.
+
+- The application does not function on mobile. This is due to the 'enquiries' module. The lack of arrow keys makes navigation impossible. I brought this matter up with my mentor and was once again told that the actual logic was the most important aspect of this project but I should look into it. I then appealed for assistance in Slack and when I received no replies I contacted student tutoring services. It was recommended by them that I enquiry to student care about the assessment criterion of this project. I did this, and was told that it was not necessary, per the assessment criteria, for this application to be responsive on mobile devices at the pass level. This was my interpretation as well, so I made the choice to continue using the enquiries module as I felt it added functionality to the application that I wanted. If I were to add mobile functionality in the future I feel this would be very straightforward. I would either use inputs in conjunction with validation instead of the 'menu' or I would research and hopefully find a module with similar functionality as enquiries but responsive on mobile.
 
 ## Testing
+The application has been consistently tested throughout its development by both myself and others. The gender and age of testers varied, with age ranging from 20s to 60s and testers having a diverse range of computer knowledge, and each tester found the application intuitive and easy to use.
 
-The site has been consistently tested throughout its development by both myself and others. Any time a new HTML, CSS, or JS element was introduced it was stringently tested before it was either implemented or discarded.
+As mentioned, this site is not functional to its intended degree on mobile. All users who helped test this application were made aware of this and tested it on desktop/laptop devices and found it to be working correctly.
+ 
+Several bugs were found in development but all were corrected to the best of my knowledge at the submission of this project. 
 
-All html elements serve their intended purpose at time of submission. All styles work as intended and add to the overall user experience. The site has been stress tested on a large number of different browsers and screen sizes both using emulators on dev tools as well as physical mobile devices and tablets. Both myself and others viewed the site on a number of personal platforms, android and ios, and found the site to work as intended on different screen sizes and browsers.
+This project had one major direction change made at the behest of my mentor, which caused a larger rewriting of all major functions. This was difficult but improved the code by an appreciable margin and I feel it imporoved my knowledge and coding ability.
 
-I had some difficulty with both the checkAnswer and runQuiz functions towards the end of my project. I tried numerous different methods and spent a reasonable amount of time troubleshooting before my mentor looked at my code and offered his advice which thankfully was the push I needed to realise and rectify my mistake, which turned out to be mercifully simple. I had mistakenly written code in runQuiz which should have been in checkAnswer, and was calling checkAnswer in runQuiz instead of the other way around. Making these adjustments resulted in the code running as intended.
-
-One user found two issues, one where he received a score of 21/20 and one where the desktop style was being applied on his android device. He states he is using the most up to date software and hardware versions and he and I are both currently unable to replicate the first issue. Below is a snip of the second, and a snip of the relevant media query on caniuse.com. He states he tried clearing cache and restarting the browser and neither had any effect, so the issue is still outstanding. 
-
-![picture of style issue](readme-images/userscreenshot1.PNG)
-
-![picture of caniuse.com snip](readme-images/caniusesnip.PNG)
-
-
-When viewed on Microsoft Edge there are several 'issues' displayed when viewing dev tools. I brought this to the attention of my mentor as I was unable to understand the exact meaning behind them and he stated he also wasn't entirely sure on what they meant. He told me to submit as is, since the site functions as intended with no 'errors', and I would end up wasting time otherwise.
-
-![picture of Microsoft Edge issues](readme-images/issuessnip.PNG)
-
-Efforts were made beginning, during, and at the end of development to optimise the site as best as possible. This included colour palette generators and contrast checkers for accessibility, the addition of alt attributes where necessary, and search engine optimisation.
-
-A colour palette was generated and the chosen colours ran through a contrast checker to ensure a pleasant experience and large degree of accessibility for the site. 
-
-A lighthouse report was generated in order to check performance, accessibility, etc.
-
-![picture of colour palette 1](readme-images/palettesnip1.PNG)
-
-![picture of colour palette 2](readme-images/palettesnip2.PNG)
-
-![another picture of contrast checker](readme-images/contrastsnip.PNG)
-
-![picture of dev tools lighthouse snip](readme-images/lighthousesnip.PNG)
+All code was passed throught the PEP8 linter and confirmed OK. 
 
 ### Validator Testing
 
-- HTML
-  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/)
-- CSS
-  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/)
-- JS
-  - No errors were returned when passing through a JavaScript linter [JSHint](https://jshint.com/)
+No errors returned from PEP8 linter - http://pep8online.com/
 
 ### Unfixed Bugs
 
-- As mentioned above one user reported two issues which neither he nor myself were then able to replicate. I would be eager to know what caused these. 
+- As mentioned above, the application does not function on mobile, however this was a design choice I made based on my own interpretation of assessment criteria, as well as input from my mentor and student care. I am including this here as it is something I can see myself changing in the future, just for the sake of perfectionism, but I am happy with the application as it stands.
 
 ## Deployment
 
-- The site was deployed to GitHub pages. The steps to deploy are as follows:
-  - In the GitHub repository, navigate to the Settings tab
+- The site was deployed to Heroku. The steps to deploy are as follows:
+  - Create 
   - From the source section drop-down menu, select the Main Branch
   - Once the Main Branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
